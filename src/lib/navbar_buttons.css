@@ -7,8 +7,8 @@
 .general_button__fadein:hover rect,
 .general_button__fadein:hover circle,
 .general_button__fadein:hover line {
-  transition-property: fill, stroke, opacity, color, border-color,
-    background-color;
+  transition-property:
+    fill, stroke, opacity, color, border-color, background-color;
   transition-duration: 300ms;
   transition-timing-function: ease;
 }
