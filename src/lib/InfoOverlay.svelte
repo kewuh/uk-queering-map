@@ -2,7 +2,7 @@
   import { infoOverlayVisible } from '../stores';
   import CloseButton from './CloseButton.svelte';
 
-  let root: HTMLDivElement;
+  let root: HTMLElement;
   let active_tab = localStorage.getItem('active_tab')
     ? Number(localStorage.getItem('active_tab'))
     : 1;
