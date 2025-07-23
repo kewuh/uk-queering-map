@@ -1,5 +1,5 @@
 <script>
-  import logo from '$lib/assets/QTM_LOGO2024.png';
+  import logo from '$lib/assets/not-a-stranger-logo.png';
   import InfoButton from './InfoButton.svelte';
   import AddButton from './AddButton.svelte';
   import { infoOverlayVisible, addOverlayVisible } from '../stores';
@@ -24,10 +24,9 @@
     </button>
   {/if}
 
-  <!-- Logo removed for UK version -->
-  <!-- <div id="logo">
-    <img src={logo} alt="" />
-  </div> -->
+  <div id="logo">
+    <img src={logo} alt="NOT A STRANGER" />
+  </div>
 
   <button
     on:click={openAddOverlay}
