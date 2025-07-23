@@ -1,4 +1,4 @@
-# Queering the Map
+# UK Queering the Map
 
 Queering the Map is a community-based platform where individuals anonymously pin their queer experiences and stories to specific locations on a global map.
 
