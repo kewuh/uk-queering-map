@@ -2,6 +2,12 @@
 
 Queering the Map is a community-based platform where individuals anonymously pin their queer experiences and stories to specific locations on a global map.
 
+## 🗺️ UK-Focused Features
+- **UK-centered map** (London coordinates)
+- **100 UK sample data points**
+- **OpenStreetMap tiles** (no CORS issues)
+- **Automatic deployments** from GitHub
+
 ## Setup
 
 You have two options for setting up the project: a quick setup for frontend-only work or a full setup with Supabase.
