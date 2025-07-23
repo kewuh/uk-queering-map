@@ -24,9 +24,10 @@
     </button>
   {/if}
 
-  <div id="logo">
+  <!-- Logo removed for UK version -->
+  <!-- <div id="logo">
     <img src={logo} alt="" />
-  </div>
+  </div> -->
 
   <button
     on:click={openAddOverlay}
