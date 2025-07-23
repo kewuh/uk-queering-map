@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "vite dev --port 5173",
-    "build": "npm run fetch-data && vite build",
+    "build": "npm run seed-data && vite build",
     "preview": "vite preview",
     "test": "npm run test:integration",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
@@ -45,6 +45,7 @@
   "dependencies": {
     "@fontsource/apfel-grotezk": "^5.2.5",
     "@supabase/supabase-js": "^2.44.4",
+    "@sveltejs/adapter-vercel": "^5.8.0",
     "dotenv": "^16.6.1",
     "maplibre-gl": "^4.7.1"
   },

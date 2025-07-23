@@ -21,8 +21,9 @@ function generateRandomDescription(id: number): string {
 }
 
 function generateRandomMoment(id: number): Feature<Point> {
-  const longitude = getRandomCoordinate(-180, 180);
-  const latitude = getRandomCoordinate(-90, 90);
+  // UK coordinates: roughly -8.65 to 1.77 longitude, 49.16 to 60.86 latitude
+  const longitude = getRandomCoordinate(-8.65, 1.77);
+  const latitude = getRandomCoordinate(49.16, 60.86);
 
   const point: Point = {
     type: 'Point',
@@ -91,7 +92,7 @@ function parseArguments(args: string[]): Record<string, string> {
   return result;
 }
 
-const DEFAULT_NUMBER_OF_MOMENTS = 99999;
+const DEFAULT_NUMBER_OF_MOMENTS = 100;
 
 const args = process.argv.slice(2);
 const parsedArgs = parseArguments(args);

@@ -28,7 +28,7 @@
   let mapContainer: HTMLDivElement;
   let isMomentLayerClicked = false;
 
-  const initialState = { lng: -73.567256, lat: 45.501689, zoom: 12.5 };
+  const initialState = { lng: -0.1276, lat: 51.5074, zoom: 6 };
 
   const markerHeight = 39;
   const markerId = 'moments';
