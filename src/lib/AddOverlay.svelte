@@ -15,9 +15,7 @@
   import { SvelteToast, toast } from '@zerodevx/svelte-toast';
 
   let momentDescription = '';
-  let captchaToken = '';
   let isAddButtonDisabled = true;
-  let requestCaptcha = false;
 
   function closeAddOverlay() {
     addOverlayVisible.update(() => false);
@@ -47,16 +45,10 @@
     !momentDescription;
 
   async function handleAddMoment() {
-    if (!captchaToken) {
-      alert('Please complete the CAPTCHA.');
-      return;
-    }
-
     const payload = JSON.stringify({
       lng: $activeMarkerCoords?.lng,
       lat: $activeMarkerCoords?.lat,
-      description: momentDescription,
-      captchaToken
+      description: momentDescription
     });
 
     const response = await fetch('moments', {
@@ -75,13 +67,6 @@
       alert(`Error: ${result.error}`);
     }
   }
-
-  const handleTurnstile = (
-    e: CustomEvent<TurnstileEventDetail<{ token: string }>>
-  ) => {
-    captchaToken = e.detail.token;
-    handleAddMoment();
-  };
 
   new SvelteToast({
     target: document.body
@@ -124,26 +109,6 @@
               class="subform"
             ></textarea>
 
-            {#if requestCaptcha}
-              <div
-                style="margin-top: 16px"
-                use:turnstile
-                turnstile-sitekey={PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY}
-                on:turnstile={handleTurnstile}
-              ></div>
-            {/if}
-            <!-- <div class="recaptcha-text">
-							This site is protected by Turnstile and Cloudflare
-							<a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener"
-								>Privacy Policy</a
-							>
-							and
-							<a href="https://www.cloudflare.com/website-terms/" target="_blank" rel="noopener"
-								>Terms of Service</a
-							>
-							apply.
-						</div> -->
-
             <div class="recaptcha-text">
               By submitting I agree to the <a
                 href="/"
@@ -160,7 +125,7 @@
               >.
             </div>
             <ActionButton
-              functionOnClick={() => (requestCaptcha = true)}
+              functionOnClick={handleAddMoment}
               isDisabled={isAddButtonDisabled}>Add</ActionButton
             >
           </form>

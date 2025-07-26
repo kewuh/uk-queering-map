@@ -2,4 +2,4 @@
   "buildCommand": "npm run build:vercel",
   "installCommand": "npm ci --ignore-scripts",
   "framework": "sveltekit"
-} 
+}

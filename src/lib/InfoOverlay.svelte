@@ -55,62 +55,29 @@
         <h2 style="border-top: 0px;">About</h2>
         <div class="overlay__section-text">
           <p>
-            Queering the Map is a community generated counter-mapping platform
-            for digitally archiving LGBTQ2IA+ experience in relation to physical
-            space.
+            Placemarked is a community-powered counter-mapping platform for archiving migrant experiences in relation to place.
           </p>
 
           <p>
-            The platform provides an interface to collaboratively record the
-            cartography of queer life—from park benches to the middle of the
-            ocean—in order to preserve our histories and unfolding realities,
-            which continue to be invalidated, contested, and erased. From
-            collective action to stories of coming out, encounters with violence
-            to moments of rapturous love, Queering the Map functions as a living
-            archive of queer life.
+            The platform offers a space to collectively trace how borders are lived—on the street, in schools, at train stations and GP surgeries. Whether it's a moment of kindness or a demand to "show your papers," a housing rejection or an immigration raid, this map gathers fragments of migrant life that are too often ignored, criminalised, or erased.
           </p>
 
           <p>
-            Through mapping LGBTQ2IA+ experience in its intersectional
-            permutations, the project works to generate affinities across
-            difference and beyond borders — revealing the ways in which we are
-            intimately connected.
+            From displacement and documentation to resistance and resilience, Not A Stranger is a living archive of how migration is shaped, and how it shapes us. By mapping the emotional and political geographies of migration, we seek to reveal not just the violence of borders, but also the networks of care, solidarity, and survival that stretch beyond them.
           </p>
 
-          <h2>Land Acknowledgment</h2>
+          <h2>Empire</h2>
           <div class="overlay__section-text">
             <p>
-              Queering the Map was initiated on the unceded traditional lands of
-              the Kanien'kehá:ka Nation. The island currently called “Montreal”
-              is known as Tiohtia:ke in the language of the Kanien'kehá:ka, and
-              it has historically been a meeting place for other Indigenous
-              nations.
+              Placemarked was created on land deeply shaped by empire, enclosure, and displacement. The UK's borders may be fixed on maps, but its wealth, institutions, and very idea of "nation" have been built through centuries of colonial extraction, forced migration, and the violent movement of people and resources.
             </p>
 
             <p>
-              A queer approach to space points out the limitations of the ways
-              in which the world around us is produced and normalized by and for
-              certain bodies and not others. It is pertinent that we
-              continuously reflect and act on the ways in which LGBTQIA+ life is
-              complicit in ongoing processes of settler-colonialism. How does
-              race, gender, sexuality, citizenship, ability, and class affect
-              the ways in which we relate to, move through, and create space? As
-              a pin on Queering the Map in Honolulu, Hawaii attests: “queer
-              liberation must mean decolonization, and decolonization must mean
-              queer liberation.”
+              Many of us who migrate to the UK do so as a direct result of these histories: seeking refuge, opportunity, or survival in places shaped by the same empires that destabilised our own. As we map our experiences here, we must ask: Whose stories are still missing from the map?
             </p>
 
             <p>
-              If you are not currently aware of the rightful keepers of the land
-              on which you are located, you can learn more at <a
-                href="https://www.native-land.ca/"
-                target="_blank"
-                rel="noopener">native-land.ca</a
-              >. Beyond simply acknowledging the colonial histories of the land
-              on which you are located, we encourage you to take concrete steps
-              towards decolonization by learning more about the ways in which
-              you can support Indigenous communities in the fight for
-              sovereignty.
+              Migration justice must reckon with Britain's colonial past and its ongoing border regime. It must also be in solidarity with all who are displaced, whether by war, climate collapse, gentrification, or austerity, and with Indigenous peoples resisting erasure around the world.
             </p>
           </div>
         </div>
@@ -205,7 +172,7 @@
       </section>
 
       <section style={active_tab !== 5 ? 'display: none;' : ''}>
-        <h2>Why can’t I see my post on the map?</h2>
+        <h2>Why can't I see my post on the map?</h2>
         <div class="overlay__section-text">
           <p>
             In 99.9% of cases, it is because it has not been reviewed by our
@@ -324,19 +291,19 @@
           <h2>The Nation</h2>
           <a
             href="https://www.thenation.com/article/world/gaza-queering-the-map/"
-            title="Gaza’s Queer Palestinians Fight to Be Remembered"
+            title="Gaza's Queer Palestinians Fight to Be Remembered"
             rel="noopener noreferrer"
-            target="_blank">Gaza’s Queer Palestinians Fight to Be Remembered</a
+            target="_blank">Gaza's Queer Palestinians Fight to Be Remembered</a
           >
           <span> By Sarah O'Neal</span>
 
           <h2>Time Magazine</h2>
           <a
             href="https://time.com/6326254/queering-the-map-gaza-lgbt-palestinians/"
-            title="In Gaza, ‘Queering the Map’ Reveals Heartbreaking Notes of LGBT Love and Loss"
+            title="In Gaza, 'Queering the Map' Reveals Heartbreaking Notes of LGBT Love and Loss"
             rel="noopener noreferrer"
             target="_blank"
-            >In Gaza, ‘Queering the Map’ Reveals Heartbreaking Notes of LGBT
+            >In Gaza, 'Queering the Map' Reveals Heartbreaking Notes of LGBT
             Love and Loss</a
           >
           <span> By Chad De Guzman</span>
@@ -344,10 +311,10 @@
           <h2>C Magazine</h2>
           <a
             href="https://cmagazine.com/articles/the-map-emisem-the-territory-on-lucas-larochelles-queering-the-m"
-            title="The Map Is the Territory: On Lucas LaRochelle’s Queering the Map"
+            title="The Map Is the Territory: On Lucas LaRochelle's Queering the Map"
             rel="noopener noreferrer"
             target="_blank"
-            >The Map Is the Territory: On Lucas LaRochelle’s Queering the Map</a
+            >The Map Is the Territory: On Lucas LaRochelle's Queering the Map</a
           >
           <span> By Kat Benedict</span>
 
@@ -438,10 +405,10 @@
           <h2>Truthout</h2>
           <a
             href="https://truthout.org/articles/uk-lesbian-collective-demands-ends-to-british-funding-of-israels-military/"
-            title="UK ‘Dyke Project’ Hacks London Bus Ads to Challenge Israeli Pinkwashing"
+            title="UK 'Dyke Project' Hacks London Bus Ads to Challenge Israeli Pinkwashing"
             rel="noopener noreferrer"
             target="_blank"
-            >UK ‘Dyke Project’ Hacks London Bus Ads to Challenge Israeli
+            >UK 'Dyke Project' Hacks London Bus Ads to Challenge Israeli
             Pinkwashing</a
           >
           <span> By Zane McNeill</span>
@@ -449,10 +416,10 @@
           <h2>Feminist Giant</h2>
           <a
             href="https://www.feministgiant.com/p/global-roundup-gaza-on-queering-the"
-            title="Global Roundup: Gaza on ‘Queering the Map’, Bolivia Sexual Violence, Philippines Drag Artist Arrest, Indigenous Women in Malaysia vs Double Discrimination, Film on Caribbean Masculine-Presenting Women"
+            title="Global Roundup: Gaza on 'Queering the Map', Bolivia Sexual Violence, Philippines Drag Artist Arrest, Indigenous Women in Malaysia vs Double Discrimination, Film on Caribbean Masculine-Presenting Women"
             rel="noopener noreferrer"
             target="_blank"
-            >Global Roundup: Gaza on ‘Queering the Map’, Bolivia Sexual
+            >Global Roundup: Gaza on 'Queering the Map', Bolivia Sexual
             Violence, Philippines Drag Artist Arrest, Indigenous Women in
             Malaysia vs Double Discrimination, Film on Caribbean
             Masculine-Presenting Women</a
@@ -462,10 +429,10 @@
           <h2>Feminism in India</h2>
           <a
             href="https://feminisminindia.com/2023/12/05/how-queering-the-map-has-helped-queer-palestinians-gain-visibility-and-challenge-geopolitical-stereotypes/"
-            title="How ‘Queering The Map’ Has Helped Queer Palestinians Gain Visibility And Challenge Geopolitical Stereotypes"
+            title="How 'Queering The Map' Has Helped Queer Palestinians Gain Visibility And Challenge Geopolitical Stereotypes"
             rel="noopener noreferrer"
             target="_blank"
-            >How ‘Queering The Map’ Has Helped Queer Palestinians Gain
+            >How 'Queering The Map' Has Helped Queer Palestinians Gain
             Visibility And Challenge Geopolitical Stereotypes</a
           >
           <span> By Flavia D'mello</span>
@@ -473,10 +440,10 @@
           <h2>KAOSGL</h2>
           <a
             href="https://kaosgl.org/haber/lgbti-aktivistleri-londra-metrosunu-hackledi-filistin-le-dayanisma-mesaji-paylasti"
-            title="LGBTİ+ aktivistleri Londra metrosunu hackledi, Filistin’le dayanışma mesajı paylaştı"
+            title="LGBTİ+ aktivistleri Londra metrosunu hackledi, Filistin'le dayanışma mesajı paylaştı"
             rel="noopener noreferrer"
             target="_blank"
-            >LGBTİ+ aktivistleri Londra metrosunu hackledi, Filistin’le
+            >LGBTİ+ aktivistleri Londra metrosunu hackledi, Filistin'le
             dayanışma mesajı paylaştı</a
           >
           <span> By Yazar</span>
@@ -484,10 +451,10 @@
           <h2>Attitude</h2>
           <a
             href="https://www.attitude.co.uk/news/lgbtq-activists-the-dyke-project-hack-tfl-ads-palestinians-451431/"
-            title="LGBTQ+ activists ‘hack’ TfL ads with messages from queer Palestinians"
+            title="LGBTQ+ activists 'hack' TfL ads with messages from queer Palestinians"
             rel="noopener noreferrer"
             target="_blank"
-            >LGBTQ+ activists ‘hack’ TfL ads with messages from queer
+            >LGBTQ+ activists 'hack' TfL ads with messages from queer
             Palestinians</a
           >
           <span> By Charlotte Manning</span>
@@ -527,10 +494,10 @@
           <h2>Fanpage.it</h2>
           <a
             href="https://www.fanpage.it/innovazione/tecnologia/i-messaggi-damore-strazianti-pubblicati-dalle-coppie-lgbtq-di-gaza-ti-bacero-in-paradiso/"
-            title="I messaggi d’amore strazianti pubblicati dalle coppie Lgbtq+ di Gaza: 'Ti bacerò in paradiso'"
+            title="I messaggi d'amore strazianti pubblicati dalle coppie Lgbtq+ di Gaza: 'Ti bacerò in paradiso'"
             rel="noopener noreferrer"
             target="_blank"
-            >I messaggi d’amore strazianti pubblicati dalle coppie Lgbtq+ di
+            >I messaggi d'amore strazianti pubblicati dalle coppie Lgbtq+ di
             Gaza: "Ti bacerò in paradiso"</a
           >
           <span> By Elisabetta Rosso</span>
@@ -538,11 +505,11 @@
           <h2>La Nazione</h2>
           <a
             href="https://luce.lanazione.it/attualita/messaggi-amore-gaza-queer/"
-            title="Messaggi d’amore dalla Striscia di Gaza: “Qui essere gay è difficile”"
+            title="Messaggi d'amore dalla Striscia di Gaza: 'Qui essere gay è difficile'"
             rel="noopener noreferrer"
             target="_blank"
-            >Messaggi d’amore dalla Striscia di Gaza: “Qui essere gay è
-            difficile”</a
+            >Messaggi d'amore dalla Striscia di Gaza: "Qui essere gay è
+            difficile"</a
           >
           <span> By Giorgia Borgioli </span>
 
@@ -700,11 +667,11 @@
           <h2>Gay Times</h2>
           <a
             href="https://www.gaytimes.co.uk/life/lesbian-is-not-a-dirty-word-how-learning-about-our-history-filled-me-with-pride/"
-            title="‘Lesbian is not a dirty word: How learning about our history filled me with pride’"
+            title="'Lesbian is not a dirty word: How learning about our history filled me with pride'"
             rel="noopener noreferrer"
             target="_blank"
-            >‘Lesbian is not a dirty word: How learning about our history filled
-            me with pride’</a
+            >"'Lesbian is not a dirty word: How learning about our history filled
+            me with pride'"</a
           >
           <span> By Zaynab Melhuish-Khan</span>
 
@@ -763,17 +730,17 @@
           <h2>Urban Creature</h2>
           <a
             href="https://urbancreature.co/queering-the-map/"
-            title="อ่านบันทึกเรื่องราวของชาว LGBTQ+ ที่เชื่อมโยงความทรงจำกับสถานที่ บนแผนที่ออนไลน์ ‘Queering the Map’"
+            title="อ่านบันทึกเรื่องราวของชาว LGBTQ+ ที่เชื่อมโยงความทรงจำกับสถานที่ บนแผนที่ออนไลน์ 'Queering the Map'"
             rel="noopener noreferrer"
             target="_blank"
             >อ่านบันทึกเรื่องราวของชาว LGBTQ+ ที่เชื่อมโยงความทรงจำกับสถานที่
-            บนแผนที่ออนไลน์ ‘Queering the Map’</a
+            บนแผนที่ออนไลน์ 'Queering the Map'</a
           >
           <span> By Urban Creature Staff </span>
 
           <h2>Nexo</h2>
           <a
-            href="https://www.nexojornal.com.br/expresso/2023/03/24/Este-site-conta-hist%C3%B3rias-da-comunidade-LGBTI-pelo-mundo"
+            href="https://www.nexojornal.com.br/expresso/2023/03/24/Este-site-conta-histórias-da-comunidade-LGBTI-pelo-mundo"
             title="Este site conta histórias da comunidade LGBTI+ pelo mundo"
             rel="noopener noreferrer"
             target="_blank"
@@ -979,9 +946,9 @@
           <h2>Concordia</h2>
           <a
             href="https://www.concordia.ca/news/stories/2019/07/09/queering-the-map-comes-to-concordia-s-4th-space.html"
-            title="Queering The Map comes to Concordia’s 4TH SPACE"
+            title="Queering The Map comes to Concordia's 4TH SPACE"
             rel="noopener noreferrer"
-            target="_blank">Queering The Map comes to Concordia’s 4TH SPACE</a
+            target="_blank">Queering The Map comes to Concordia's 4TH SPACE</a
           >
           <span> By Mackenzie Lad and Tom Peacock</span>
 
@@ -1068,10 +1035,10 @@
           <h2>Autostraddle</h2>
           <a
             href="https://www.autostraddle.com/here-queer-everywhere-queering-the-map-gives-voice-to-queer-spaces-worldwide-419732/"
-            title="Here, Queer, Everywhere: ‘Queering the Map’ Gives Voice to Queer Spaces Worldwide"
+            title="Here, Queer, Everywhere: 'Queering the Map' Gives Voice to Queer Spaces Worldwide"
             rel="noopener noreferrer"
             target="_blank"
-            >Here, Queer, Everywhere: ‘Queering the Map’ Gives Voice to Queer
+            >Here, Queer, Everywhere: 'Queering the Map' Gives Voice to Queer
             Spaces Worldwide</a
           >
           <span> By Vanessa Pamela</span>
@@ -1172,8 +1139,8 @@
             <li>
               <p>
                 By using the Queering the Map website, application or other
-                services (“Services”), you agree to our Terms of Use and our
-                Privacy Policy. If you don’t agree to our Terms of Use or
+                services ("Services"), you agree to our Terms of Use and our
+                Privacy Policy. If you don't agree to our Terms of Use or
                 Privacy Policy, do not use our Services.
               </p>
             </li>
@@ -1263,12 +1230,12 @@
           <h2>1. Introduction</h2>
           <p>
             The Queering the Map website, application and other services (the
-            “Queering the Ma Services”) are made available to you in accordance
-            with these Terms by Queering the Map (“Queering the Map”, “we”,
-            “our”, “us”). These terms and conditions of use, together with our
+            "Queering the Ma Services") are made available to you in accordance
+            with these Terms by Queering the Map ("Queering the Map", "we",
+            "our", "us"). These terms and conditions of use, together with our
             Privacy Policy and all supplemental terms (as amended from time to
             time), other documents and policies that are expressly referenced in
-            these terms and conditions (the “Terms”), govern your use of the
+            these terms and conditions (the "Terms"), govern your use of the
             Services.
           </p>
           <p>
@@ -1305,7 +1272,7 @@
 
           <h2>3. Your Right to Post User Content</h2>
           <p>
-            Queering The Map (‘the Service’) allows you to post content. You
+            Queering The Map ('the Service') allows you to post content. You
             retain any and all of your rights to any content you submit, post or
             display on or through Queering The Map and you are responsible for
             protecting those rights.
@@ -1357,7 +1324,7 @@
           <h2>5. Content Standards Policy</h2>
           <p>
             You may have the opportunity to create, upload and/or share content
-            when using the Queering the Map Services (“User Content”). You shall
+            when using the Queering the Map Services ("User Content"). You shall
             ensure that all User Content created or posted by you satisfies the
             requirements set out in this Section 5. These requirements apply in
             addition to any other policies or terms of use we provide or are
@@ -1403,7 +1370,7 @@
               media handle);
             </li>
             <li>
-              Be defamatory or an invasion of an individual’s right to privacy;
+              Be defamatory or an invasion of an individual's right to privacy;
             </li>
             <li>
               Infringe the intellectual property or other rights of any third
@@ -1427,8 +1394,8 @@
             </li>
             <li>
               Consist of any other content that, in our opinion breaches or may
-              breach the spirit of or intention behind any of the above “must
-              nots”.
+              breach the spirit of or intention behind any of the above "must
+              nots".
             </li>
           </ul>
 
@@ -1541,7 +1508,7 @@
             You may not use the Queering the Map Services if you are under the
             age of 13. For users between 13 and 18 years of age, subject to the
             laws of your country of residence and you obtaining your
-            parents’/guardians’ prior consent, you will be entitled to use the
+            parents'/guardians' prior consent, you will be entitled to use the
             Queering the Map Services. We do not knowingly collect or store any
             personally identifiable information from children under 13.
           </p>
@@ -1599,8 +1566,8 @@
 
           <h2>11. Our And Your Legal Responsibility</h2>
           <p>
-            The Queering the Map Services are provided on an “as is” and “as
-            available’ basis. To the fullest extent permitted under applicable
+            The Queering the Map Services are provided on an "as is" and "as
+            available' basis. To the fullest extent permitted under applicable
             law, we provide no express, implied, or statutory warranties that
             you will be able to access or use any Queering the Map services at
             the times or locations of your choosing or that the Queering the Map
@@ -1678,7 +1645,7 @@
             enforcing either that provision (or any similar provision) on a
             later occasion. If any provision of these Terms is found by a court
             to be invalid, we agree that the court should endeavor to give
-            effect to the parties’ intentions as reflected in the provision and
+            effect to the parties' intentions as reflected in the provision and
             that other provisions remain in full force and effect. We may
             transfer all or part of our rights or duties under these Terms
             provided we take reasonable steps to ensure that your rights under
@@ -1760,7 +1727,7 @@
           </p>
 
           <!-- <p>
-            Email Addresses: We collect user’s email addresses if they directly
+            Email Addresses: We collect user's email addresses if they directly
             contact us through email, or use the Request for Removal form. We do
             not collect email addresses when a user submits User Content. We do
             not share email addresses with any third parties.

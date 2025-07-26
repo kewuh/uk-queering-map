@@ -120,7 +120,7 @@
     map.on('load', async () => {
       map.addSource(markerId, {
         type: 'geojson',
-        data: 'data/moments.json'
+        data: '/moments'
       });
 
       try {
