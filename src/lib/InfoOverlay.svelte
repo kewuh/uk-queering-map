@@ -180,12 +180,6 @@
             The moderation process is to ensure the safety of the map, and is
             not about policing expressions or identities.
           </p>
-          <p>
-            Given the amount of posts that have been made over the past few
-            months, we are at a significant moderation backlog, and are doing
-            our best to publish posts as quickly as we can. We appreciate your
-            patience.
-          </p>
         </div>
 
         <h2>Request Removal</h2>
