@@ -885,18 +885,20 @@
       <section style={active_tab !== 7 ? 'display: none;' : ''}>
         <h2>Privacy Policy</h2>
         <div class="privacy_policy overlay__section-text">
-          <p><small>Last Updated on April 15, 2024</small></p>
+          <p><small>Last Updated on 26 July 2025</small></p>
 
           <p>
             This Privacy Policy outlines the collection, use, disclosure, and
             protection of your information when you access and use our platform.
             Your privacy is crucial to us, and we are committed to maintaining
-            the confidentiality and security of the information you provide. By
-            using Queering the Map, you acknowledge that you have read and
+            the confidentiality and security of the information you provide.
+          </p>
+
+          <p>
+            By using Placemarked, you acknowledge that you have read and
             understood this Privacy Policy. Your continued use of the platform
             constitutes acceptance of any updates or changes to this policy. If
-            you do not agree to this Privacy Policy, do not use Queering the
-            Map.
+            you do not agree to this Privacy Policy, do not use Placemarked.
           </p>
 
           <h2>1. Information We Collect</h2>
@@ -915,17 +917,11 @@
             database.
           </p>
 
-          <!-- <p>
-            Email Addresses: We collect user's email addresses if they directly
-            contact us through email, or use the Request for Removal form. We do
-            not collect email addresses when a user submits User Content. We do
-            not share email addresses with any third parties.
-          </p> -->
           <h2>2. Use of Information</h2>
           <p>
             Platform Functionality: We use the information collected to provide
-            and improve the functionality of Queering the Map, allowing users to
-            share and explore LGBTQ2IA+ experiences globally.
+            and improve the functionality of Placemarked, allowing users to
+            share and explore migrant experiences globally.
           </p>
 
           <p>
@@ -939,7 +935,7 @@
             Anonymity: Users contribute anonymously if they choose not to
             associate their contributions with identifiable information. Users
             cannot create accounts, so no usernames, passwords, phone numbers,
-            email addresses or social media handles are associated with
+            email addresses, or social media handles are associated with
             contributions. We moderate all contributions for breaches of
             anonymity.
           </p>
@@ -952,9 +948,9 @@
 
           <h2>4. Third-Party Services</h2>
           <p>
-            Queering the Map may use third-party services for analytics,
-            hosting, and other functionalities. These services may have their
-            own privacy policies, and users are encouraged to review them.
+            Placemarked may use third-party services for analytics, hosting,
+            and other functionalities. These services may have their own
+            privacy policies, and users are encouraged to review them.
           </p>
 
           <h2>5. Security</h2>
@@ -967,12 +963,11 @@
 
           <h2>6. Children's Privacy</h2>
           <p>
-            Queering the Map is intended for users aged 13 and older. We do not
+            Placemarked is intended for users aged 13 and older. We do not
             knowingly collect information from individuals under the age of 13.
           </p>
 
           <h2>7. Changes to This Privacy Policy</h2>
-
           <p>
             We reserve the right to update or change our Privacy Policy at any
             time. Any changes will be effective immediately upon posting the
@@ -981,10 +976,16 @@
 
           <h2>8. Preteens And Users Under 18</h2>
           <p>
-            For answers to any questions you may have about our Terms of Use,
-            email us at <a href="mailto:hi@queeringthemap.com"
-              >hi@queeringthemap.com</a
-            >.
+            Placemarked is not intended for users under 13. If you are between
+            13 and 18, you may use the platform only with parental or guardian
+            consent, in accordance with applicable laws.
+          </p>
+
+          <h2>Contact Us</h2>
+          <p>
+            For answers to any questions you may have about our Terms of Use or
+            Privacy Policy, email us at: david [dot] norton [at] notastranger
+            [dot] org
           </p>
         </div>
       </section>
