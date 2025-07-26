@@ -399,114 +399,94 @@
       <section style={active_tab !== 6 ? 'display: none;' : ''}>
         <h2>Terms of Use</h2>
         <div class="privacy_policy overlay__section-text">
-          <p><small>Last Updated on April 15, 2024</small></p>
-
-          <h2>Summary</h2>
+          <p><small>Last Updated on 26 July 2025</small></p>
 
           <p>
             It is important to us that you understand our Terms of Use, which,
-            simply put, are the conditions and rules of using Queering the Map.
-            Because legal jargon is often intricate, lengthy and dull, we have
-            created a summary of the key points to keep in mind while using this
-            website.
+            simply put, are the conditions and rules of using this site. Because
+            legal jargon is often intricate, lengthy and dull, we have created a
+            summary of the key points to keep in mind while using this website.
           </p>
           <p>
             It's important to note that this summary is not intended to replace
             the complete Terms of Use, and we strongly recommend reviewing the
             full Terms of Use before engaging with our website.
           </p>
-          <ul>
-            <li>
-              <p>
-                By using the Queering the Map website, application or other
-                services ("Services"), you agree to our Terms of Use and our
-                Privacy Policy. If you don't agree to our Terms of Use or
-                Privacy Policy, do not use our Services.
-              </p>
-            </li>
-            <li>
-              <p>
-                We can change the Terms of Use and Privacy Policy at any time,
-                so please check them both often to ensure you are up to date on
-                any changes.
-              </p>
-            </li>
-            <li>
-              <p>
-                Our Services allow you to share User Content and you retain
-                ownership of what you post, but by using the Services, you grant
-                us and other users of the website permission to use, modify, and
-                share your User Content, both on the website itself and beyond
-                it. You confirm that you own or have permission to use the
-                content you share and agree that Queering the Map and others can
-                use it according to these terms.
-              </p>
-            </li>
-            <li>
-              <p>
-                You retain the right to remove User Content that you have
-                submitted to the Queering the Map website. If you want your User
-                Content removed at any time, and for any reason, please contact
-                us at <a href="mailto:hi@queeringthemap.com"
-                  >hi@queeringthemap.com</a
-                >.
-              </p>
-            </li>
-            <li>
-              <p>
-                When using our Services, you can create, upload, and share User
-                Content subject to specific guidelines. Your content must comply
-                with all laws and be uploaded only if you have the rights to it
-                or permission from the owner. Additionally, your content must
-                not promote hate, violence, or discrimination, disclose personal
-                contact information, infringe on intellectual property rights,
-                impersonate others, contain harmful software, serve commercial
-                purposes, or engage in spam or fraudulent activities.
-              </p>
-            </li>
-            <li>
-              <p>
-                Our Services operates under the Creative Commons
-                Attribution-NonCommercial-ShareAlike 4.0 International License,
-                which allows you to share and adapt the material on the website
-                as long as you give appropriate credit, use it for
-                non-commercial purposes, and share any adaptations under the
-                same license. By accessing or using the website, you agree to
-                comply with these terms.
-              </p>
-            </li>
-            <li>
-              <p>Don't use our Services if you are under 13.</p>
-            </li>
-            <li>
-              <p>
-                While we try to keep our Services up and running, sometimes the
-                site may go down, data may be lost, or other issues may arise.
-                We will try to fix these issues, but we are not liable to you or
-                any other users if such issues arise.
-              </p>
-            </li>
-            <li>
-              <p>
-                Our Services may include links to third-party websites or
-                technologies. We make no promises about the content of those
-                third-party sites or the safety of those sites.
-              </p>
-            </li>
-            <li>
-              <p>
-                Our Services are only for personal use, not for business or
-                commercial purposes.
-              </p>
-            </li>
-            <li>
-              <p>
-                If you have questions, please contact us: <a
-                  href="mailto:hi@queeringthemap.com">hi@queeringthemap.com</a
-                >.
-              </p>
-            </li>
-          </ul>
+
+          <p>
+            By using the Placemarked website, application or other services
+            ("Services"), you agree to our Terms of Use and our Privacy Policy.
+            If you don't agree to our Terms of Use or Privacy Policy, do not use
+            our Services.
+          </p>
+          <p>
+            We can change the Terms of Use and Privacy Policy at any time, so
+            please check them both often to ensure you are up to date on any
+            changes.
+          </p>
+
+          <p>
+            Our Services allow you to share User Content and you retain
+            ownership of what you post, but by using the Services, you grant us
+            and other users of the website permission to use, modify, and share
+            your User Content, both on the website itself and beyond it. You
+            confirm that you own or have permission to use the content you share
+            and agree that Placemarked and others can use it according to these
+            terms.
+          </p>
+
+          <p>
+            You retain the right to remove User Content that you have submitted
+            to the Placemarked website. If you want your User Content removed at
+            any time, and for any reason, please contact us at david [dot]
+            norton [at] notastranger [dot] org.
+          </p>
+
+          <p>
+            When using our Services, you can create, upload, and share User
+            Content subject to specific guidelines. Your content must comply with
+            all laws and be uploaded only if you have the rights to it or
+            permission from the owner. Additionally, your content must not
+            promote hate, violence, or discrimination, disclose personal contact
+            information, infringe on intellectual property rights, impersonate
+            others, contain harmful software, serve commercial purposes, or
+            engage in spam or fraudulent activities.
+          </p>
+
+          <p>
+            Our Services operate under the Creative Commons
+            Attribution-NonCommercial-ShareAlike 4.0 International License,
+            which allows you to share and adapt the material on the website as
+            long as you give appropriate credit, use it for non-commercial
+            purposes, and share any adaptations under the same license. By
+            accessing or using the website, you agree to comply with these
+            terms.
+          </p>
+
+          <p>Don't use our Services if you are under 13.</p>
+
+          <p>
+            While we try to keep our Services up and running, sometimes the site
+            may go down, data may be lost, or other issues may arise. We will
+            try to fix these issues, but we are not liable to you or any other
+            users if such issues arise.
+          </p>
+
+          <p>
+            Our Services may include links to third-party websites or
+            technologies. We make no promises about the content of those
+            third-party sites or the safety of those sites.
+          </p>
+
+          <p>
+            Our Services are only for personal use, not for business or
+            commercial purposes.
+          </p>
+
+          <p>
+            If you have questions, please contact us: david [dot] norton [at]
+            notastranger [dot] org.
+          </p>
           <h2>1. Introduction</h2>
           <p>
             The Queering the Map website, application and other services (the
