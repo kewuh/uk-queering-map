@@ -116,9 +116,10 @@
         <h2>Donate</h2>
         <div class="overlay__section-text">
           <p>
-            Queering the Map is a grassroots endeavour, and relies on donations
-            to cover the costs of keeping the site alive. Please support the
-            future of Queering The Map by making a donation through our Patreon!
+            This project is built upon Queering the Map, a grassroots endeavour
+            that relies on donations. Please support them by making a donation
+            through their Patreon below. Not A Stranger's charitable status is
+            currently pending with the UK's Charity Commission.
           </p>
           <div class="button__fadein">
             <a
@@ -133,11 +134,8 @@
         <h2>Volunteer</h2>
         <div class="overlay__section-text">
           <p>
-            We are always looking for moderators and developers to support the
-            maintenance of the platform! If you would like to volunteer your
-            time, please send us an email expressing your interest at <a
-              href="mailto:hi@queeringthemap.com">hi@queeringthemap.com</a
-            >.
+            If you would like to volunteer your time, please send us an email
+            expressing your interest at david.norton [at] notastranger [dot] org
           </p>
         </div>
       </section>
