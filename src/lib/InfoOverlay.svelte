@@ -55,29 +55,58 @@
         <h2 style="border-top: 0px;">About</h2>
         <div class="overlay__section-text">
           <p>
-            Placemarked is a community-powered counter-mapping platform for archiving migrant experiences in relation to place.
+            Placemarked is a community-powered counter-mapping platform for
+            archiving migrant experiences in relation to place.
           </p>
 
           <p>
-            The platform offers a space to collectively trace how borders are lived—on the street, in schools, at train stations and GP surgeries. Whether it's a moment of kindness or a demand to "show your papers," a housing rejection or an immigration raid, this map gathers fragments of migrant life that are too often ignored, criminalised, or erased.
+            The platform offers a space to collectively trace how borders are
+            lived: on the street, in schools, at train stations and GP surgeries.
+            Whether it's a moment of kindness or a demand to "show your papers,"
+            a housing rejection or an immigration raid, this map gathers
+            fragments of migrant life that are too often ignored, criminalised,
+            or erased.
           </p>
 
           <p>
-            From displacement and documentation to resistance and resilience, Not A Stranger is a living archive of how migration is shaped, and how it shapes us. By mapping the emotional and political geographies of migration, we seek to reveal not just the violence of borders, but also the networks of care, solidarity, and survival that stretch beyond them.
+            From displacement and documentation to resistance and resilience,
+            Not A Stranger is a living archive of how migration is shaped, and
+            how it shapes us. By mapping the emotional and political geographies
+            of migration, we seek to reveal not just the violence of borders,
+            but also the networks of care, solidarity, and survival that stretch
+            beyond them.
+          </p>
+
+          <p>
+            This platform is a project of Not A Stranger. It is inspired by and
+            built upon Queering the Map's community-based platform, mapping
+            memories and experiences across physical space.
           </p>
 
           <h2>Empire</h2>
           <div class="overlay__section-text">
             <p>
-              Placemarked was created on land deeply shaped by empire, enclosure, and displacement. The UK's borders may be fixed on maps, but its wealth, institutions, and very idea of "nation" have been built through centuries of colonial extraction, forced migration, and the violent movement of people and resources.
+              Placemarked was created on land deeply shaped by empire,
+              enclosure, and displacement. The UK's borders may be fixed on
+              maps, but its wealth, institutions, and very idea of "nation" have
+              been built through centuries of colonial extraction, forced
+              migration, and the violent movement of people and resources.
             </p>
 
             <p>
-              Many of us who migrate to the UK do so as a direct result of these histories: seeking refuge, opportunity, or survival in places shaped by the same empires that destabilised our own. As we map our experiences here, we must ask: Whose stories are still missing from the map?
+              Many of us who migrate to the UK do so as a direct result of these
+              histories: seeking refuge, opportunity, or survival in places
+              shaped by the same empires that destabilised our own. As we map
+              our experiences here, we must ask: Whose stories are still missing
+              from the map?
             </p>
 
             <p>
-              Migration justice must reckon with Britain's colonial past and its ongoing border regime. It must also be in solidarity with all who are displaced, whether by war, climate collapse, gentrification, or austerity, and with Indigenous peoples resisting erasure around the world.
+              Migration justice must reckon with Britain's colonial past and its
+              ongoing border regime. It must also be in solidarity with all who
+              are displaced, whether by war, climate collapse, gentrification,
+              or austerity, and with Indigenous peoples resisting erasure around
+              the world.
             </p>
           </div>
         </div>
@@ -670,8 +699,8 @@
             title="'Lesbian is not a dirty word: How learning about our history filled me with pride'"
             rel="noopener noreferrer"
             target="_blank"
-            >"'Lesbian is not a dirty word: How learning about our history filled
-            me with pride'"</a
+            >"'Lesbian is not a dirty word: How learning about our history
+            filled me with pride'"</a
           >
           <span> By Zaynab Melhuish-Khan</span>
 

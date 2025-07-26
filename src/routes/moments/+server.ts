@@ -1,7 +1,6 @@
 import { json } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
 import { supabase } from '$lib/clients/supabaseClient';
-import { CLOUDFLARE_TURNSTILE_SECRET } from '$env/static/private';
 
 // Inline the moments data to avoid file system issues in deployment
 const momentsData = {

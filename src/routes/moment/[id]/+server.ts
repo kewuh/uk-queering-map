@@ -113,7 +113,7 @@ export async function GET({ params }) {
   let description;
 
   // Try to fetch from Supabase first
-  const { data, error: dbError } = await supabase
+  const { data } = await supabase
     .from('moments')
     .select('description')
     .eq('id', id)

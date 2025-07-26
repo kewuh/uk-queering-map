@@ -7,11 +7,7 @@
   import ActionButton from './ActionButton.svelte';
   import CloseButton from './CloseButton.svelte';
   import { activeMarkerCoords } from '../stores';
-  import {
-    turnstile,
-    type TurnstileEventDetail
-  } from '@svelte-put/cloudflare-turnstile';
-  import { PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY } from '$env/static/public';
+
   import { SvelteToast, toast } from '@zerodevx/svelte-toast';
 
   let momentDescription = '';
