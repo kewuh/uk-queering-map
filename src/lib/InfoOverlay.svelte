@@ -294,17 +294,10 @@
       </section>
 
       <section style={active_tab !== 4 ? 'display: none;' : ''}>
-        <h2 style="margin-bottom:0px;">Selected Press</h2>
+        <h2 style="margin-bottom:0px;">Press</h2>
 
         <div class="__press">
-          <h2>New York Times</h2>
-          <a
-            href="https://www.nytimes.com/2023/06/25/style/queering-the-map-lucas-larochelle.html"
-            title="Just Made a Queer Memory? Drop a Pin."
-            rel="noopener noreferrer"
-            target="_blank">Just Made a Queer Memory? Drop a Pin.</a
-          >
-          <span> By Katherine Oung</span>
+          <p>This project is inspired by and built upon Queering the Map's platform, particularly these stories. We'll list press for this site as it comes in.</p>
 
           <h2>The Nation</h2>
           <a
@@ -314,37 +307,6 @@
             target="_blank">Gaza's Queer Palestinians Fight to Be Remembered</a
           >
           <span> By Sarah O'Neal</span>
-
-          <h2>Time Magazine</h2>
-          <a
-            href="https://time.com/6326254/queering-the-map-gaza-lgbt-palestinians/"
-            title="In Gaza, 'Queering the Map' Reveals Heartbreaking Notes of LGBT Love and Loss"
-            rel="noopener noreferrer"
-            target="_blank"
-            >In Gaza, 'Queering the Map' Reveals Heartbreaking Notes of LGBT
-            Love and Loss</a
-          >
-          <span> By Chad De Guzman</span>
-
-          <h2>C Magazine</h2>
-          <a
-            href="https://cmagazine.com/articles/the-map-emisem-the-territory-on-lucas-larochelles-queering-the-m"
-            title="The Map Is the Territory: On Lucas LaRochelle's Queering the Map"
-            rel="noopener noreferrer"
-            target="_blank"
-            >The Map Is the Territory: On Lucas LaRochelle's Queering the Map</a
-          >
-          <span> By Kat Benedict</span>
-
-          <h2>Sissy Screens</h2>
-          <a
-            href="https://www.sissyscreens.com/interview/queering-the-map-interview/"
-            title="Queering the Map: An Interview With Lucas LaRochelle"
-            rel="noopener noreferrer"
-            target="_blank"
-            >Queering the Map: An Interview With Lucas LaRochelle</a
-          >
-          <span> By Stephanie Williams</span>
 
           <h2>Them</h2>
           <a
@@ -356,10 +318,8 @@
             Gazans</a
           >
           <span> By Abby Monteil</span>
-
-          <h2 class="divider">All Press</h2>
-
-          <h2>HuffPost</h2>
+        </div>
+      </section>
           <a
             href="https://www.huffpost.com/entry/queering-the-map-palestine_n_652fde5ce4b0da897ab610a9"
             title="Queering the Map Reveals Poignant Glimpses Of Survival In Gaza"
