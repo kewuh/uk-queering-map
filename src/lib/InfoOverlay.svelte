@@ -330,91 +330,78 @@
         <div class="privacy_policy overlay__section-text">
           <p><small>Last Updated on 26 July 2025</small></p>
 
+          <h2>Summary</h2>
           <p>
             It is important to us that you understand our Terms of Use, which,
-            simply put, are the conditions and rules of using this site. Because
+            simply put, are the conditions and rules of using Placemarked. Because
             legal jargon is often intricate, lengthy and dull, we have created a
             summary of the key points to keep in mind while using this website.
           </p>
           <p>
             It's important to note that this summary is not intended to replace
             the complete Terms of Use, and we strongly recommend reviewing the
-            full Terms of Use before engaging with our website.
+            full Terms before engaging with our website.
           </p>
 
           <p>
             By using the Placemarked website, application or other services
             ("Services"), you agree to our Terms of Use and our Privacy Policy.
-            If you don't agree to our Terms of Use or Privacy Policy, do not use
-            our Services.
+            If you don't agree to our Terms or Privacy Policy, do not use our
+            Services.
           </p>
           <p>
             We can change the Terms of Use and Privacy Policy at any time, so
-            please check them both often to ensure you are up to date on any
-            changes.
+            please check them regularly to ensure you're up to date.
           </p>
 
           <p>
             Our Services allow you to share User Content and you retain
-            ownership of what you post, but by using the Services, you grant us
-            and other users of the website permission to use, modify, and share
-            your User Content, both on the website itself and beyond it. You
-            confirm that you own or have permission to use the content you share
-            and agree that Placemarked and others can use it according to these
-            terms.
+            ownership of what you post—but by using the Services, you grant us
+            and other users permission to use, modify, and share your User
+            Content, both on the website and beyond. You confirm you own or have
+            permission to share the content, and agree that Placemarked and
+            others can use it in accordance with these terms.
           </p>
 
           <p>
-            You retain the right to remove User Content that you have submitted
-            to the Placemarked website. If you want your User Content removed at
-            any time, and for any reason, please contact us at david [dot]
-            norton [at] notastranger [dot] org.
+            You may request that your User Content be removed at any time. To do
+            so, contact us at david [dot] norton [at] notastranger [dot] org.
           </p>
 
           <p>
-            When using our Services, you can create, upload, and share User
-            Content subject to specific guidelines. Your content must comply with
-            all laws and be uploaded only if you have the rights to it or
-            permission from the owner. Additionally, your content must not
-            promote hate, violence, or discrimination, disclose personal contact
-            information, infringe on intellectual property rights, impersonate
-            others, contain harmful software, serve commercial purposes, or
-            engage in spam or fraudulent activities.
+            User Content must comply with all laws and not include hate,
+            violence, impersonation, commercial spam, harmful software, or
+            personal identifying information.
           </p>
 
           <p>
-            Our Services operate under the Creative Commons
-            Attribution-NonCommercial-ShareAlike 4.0 International License,
-            which allows you to share and adapt the material on the website as
-            long as you give appropriate credit, use it for non-commercial
-            purposes, and share any adaptations under the same license. By
-            accessing or using the website, you agree to comply with these
-            terms.
+            Placemarked operates under the Creative Commons
+            Attribution-NonCommercial-ShareAlike 4.0 International License. You
+            can share and adapt materials on the site, as long as you credit us,
+            don't use it commercially, and share any modifications under the
+            same license.
           </p>
 
-          <p>Don't use our Services if you are under 13.</p>
+          <p>Do not use our Services if you are under 13.</p>
 
           <p>
-            While we try to keep our Services up and running, sometimes the site
-            may go down, data may be lost, or other issues may arise. We will
-            try to fix these issues, but we are not liable to you or any other
-            users if such issues arise.
+            Sometimes things break or go offline. We'll try to fix them, but we
+            are not liable for any interruptions or data loss.
           </p>
 
           <p>
-            Our Services may include links to third-party websites or
-            technologies. We make no promises about the content of those
-            third-party sites or the safety of those sites.
+            Links to third-party sites or tech are not under our control, and we
+            can't make any guarantees about them.
           </p>
 
           <p>
-            Our Services are only for personal use, not for business or
-            commercial purposes.
+            This site is for personal use only—not for commercial or business
+            purposes.
           </p>
 
           <p>
-            If you have questions, please contact us: david [dot] norton [at]
-            notastranger [dot] org.
+            For questions, contact us: david [dot] norton [at] notastranger
+            [dot] org
           </p>
           <h2>1. Introduction</h2>
           <p>
