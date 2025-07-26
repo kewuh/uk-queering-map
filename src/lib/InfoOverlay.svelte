@@ -144,7 +144,7 @@
         <h2>Moderation Guidelines</h2>
         <div class="overlay__section-text">
           <p>
-            Posts to Queering the Map are moderated by a small group of
+            Posts to Placemarked are moderated by a small group of
             volunteers before they appear publicly. This to ensure the following
             are not added to the platform:
           </p>
@@ -193,7 +193,7 @@
           <p>
             If you would like something you posted to be removed, or see
             something on the map you feel shouldn't be there, please contact us
-            at <a href="mailto:hi@queeringthemap.com">hi@queeringthemap.com</a>.
+            at david.norton [at] notastranger [dot] org.
           </p>
         </div>
       </section>
@@ -214,9 +214,8 @@
         <div class="overlay__section-text">
           <p>
             Yes, of course! To delete your post, please email the text of the
-            post you would like deleted to <a
-              href="mailto:hi@queeringthemap.com">hi@queeringthemap.com</a
-            > with the subject line 'Delete My Post'.
+            post you would like deleted to david.norton [at] notastranger [dot] org
+            with the subject line 'Delete My Post'.
           </p>
         </div>
         <h2>How can I become a moderator?</h2>
@@ -224,9 +223,7 @@
           <p>
             We are always welcoming new volunteer moderators to our team. For
             information on upcoming moderator onboarding sessions, please email
-            us at <a href="mailto:hi@queeringthemap.com"
-              >hi@queeringthemap.com</a
-            >.
+            us at david.norton [at] notastranger [dot] org.
           </p>
         </div>
         <h2>Who made Queering the Map?</h2>
