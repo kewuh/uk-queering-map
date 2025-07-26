@@ -13,11 +13,11 @@
     <div class="toast">
       <div class="toast-message">
         <a
-          href="https://www.patreon.com/queeringthemap"
+          href="https://notastranger.org"
           rel="noopener"
           target="_blank"
         >
-          <span>DONATE</span> to Queering the Map to help us stay online.
+          To learn more visit <span>NotAStranger.org</span>
         </a>
       </div>
       <button class="toast-close" on:click={closeToast} aria-label="Close"
