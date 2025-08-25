@@ -526,6 +526,7 @@ export const GET: RequestHandler = async () => {
   }
 
   console.log(`Found ${data?.length || 0} approved moments in database`);
+  console.log('Sample data:', data?.slice(0, 2)); // Show first 2 records
 
   if (!data || data.length === 0) {
     console.log('No approved moments found, returning empty map');
@@ -542,13 +543,13 @@ export const GET: RequestHandler = async () => {
       // Handle the location data safely
       let coordinates = [0, 0];
       if (moment.location && typeof moment.location === 'object') {
-        const location = moment.location as any;
+        const location = moment.location as { coordinates?: number[] };
         if (location.coordinates && Array.isArray(location.coordinates)) {
           coordinates = location.coordinates;
         }
       }
 
-      return {
+      const feature = {
         type: 'Feature',
         id: moment.short_id,
         geometry: {
@@ -559,10 +560,17 @@ export const GET: RequestHandler = async () => {
           description: moment.description
         }
       };
+
+      console.log(`Created feature for moment ${moment.short_id}:`, feature);
+      return feature;
     })
   };
 
-  console.log('Returning real database data');
+  console.log(
+    'Returning real database data with',
+    geoJsonData.features.length,
+    'features'
+  );
   return json(geoJsonData);
 };
 
