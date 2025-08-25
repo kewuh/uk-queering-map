@@ -12,11 +12,7 @@
   <div class="toast-container">
     <div class="toast">
       <div class="toast-message">
-        <a
-          href="https://notastranger.org"
-          rel="noopener"
-          target="_blank"
-        >
+        <a href="https://notastranger.org" rel="noopener" target="_blank">
           To learn more visit <span>NotAStranger.org</span>
         </a>
       </div>

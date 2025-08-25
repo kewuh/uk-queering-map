@@ -13,7 +13,7 @@
     <svg
       class="general_button__fadein"
       xmlns="http://www.w3.org/2000/svg"
-              fill="#4a90e2"
+      fill="#4a90e2"
       viewBox="0 0 45 45"
       ><rect
         x="0.5"

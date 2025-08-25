@@ -61,11 +61,11 @@
 
           <p>
             The platform offers a space to collectively trace how borders are
-            lived: on the street, in schools, at train stations and GP surgeries.
-            Whether it's a moment of kindness or a demand to "show your papers,"
-            a housing rejection or an immigration raid, this map gathers
-            fragments of migrant life that are too often ignored, criminalised,
-            or erased.
+            lived: on the street, in schools, at train stations and GP
+            surgeries. Whether it's a moment of kindness or a demand to "show
+            your papers," a housing rejection or an immigration raid, this map
+            gathers fragments of migrant life that are too often ignored,
+            criminalised, or erased.
           </p>
 
           <p>
@@ -144,9 +144,9 @@
         <h2>Moderation Guidelines</h2>
         <div class="overlay__section-text">
           <p>
-            Posts to Placemarked are moderated by a small group of
-            volunteers before they appear publicly. This to ensure the following
-            are not added to the platform:
+            Posts to Placemarked are moderated by a small group of volunteers
+            before they appear publicly. This to ensure the following are not
+            added to the platform:
           </p>
 
           <div class="partial_div-numbered">
@@ -208,8 +208,8 @@
         <div class="overlay__section-text">
           <p>
             Yes, of course! To delete your post, please email the text of the
-            post you would like deleted to david.norton [at] notastranger [dot] org
-            with the subject line 'Delete My Post'.
+            post you would like deleted to david.norton [at] notastranger [dot]
+            org with the subject line 'Delete My Post'.
           </p>
         </div>
         <h2>How can I become a moderator?</h2>
@@ -226,7 +226,11 @@
         <h2 style="margin-bottom:0px;">Press</h2>
 
         <div class="__press">
-          <p>This project is inspired by and built upon Queering the Map's platform, particularly these stories. We'll list press for this site as it comes in.</p>
+          <p>
+            This project is inspired by and built upon Queering the Map's
+            platform, particularly these stories. We'll list press for this site
+            as it comes in.
+          </p>
 
           <h2>The Nation</h2>
           <a
@@ -250,8 +254,6 @@
         </div>
       </section>
 
-
-
       <section style={active_tab !== 6 ? 'display: none;' : ''}>
         <h2>Terms of Use</h2>
         <div class="privacy_policy overlay__section-text">
@@ -260,9 +262,10 @@
           <h2>Summary</h2>
           <p>
             It is important to us that you understand our Terms of Use, which,
-            simply put, are the conditions and rules of using Placemarked. Because
-            legal jargon is often intricate, lengthy and dull, we have created a
-            summary of the key points to keep in mind while using this website.
+            simply put, are the conditions and rules of using Placemarked.
+            Because legal jargon is often intricate, lengthy and dull, we have
+            created a summary of the key points to keep in mind while using this
+            website.
           </p>
           <p>
             It's important to note that this summary is not intended to replace
@@ -398,9 +401,9 @@
 
           <h2>4. Third-Party Services</h2>
           <p>
-            Placemarked may use third-party services for analytics, hosting,
-            and other functionalities. These services may have their own
-            privacy policies, and users are encouraged to review them.
+            Placemarked may use third-party services for analytics, hosting, and
+            other functionalities. These services may have their own privacy
+            policies, and users are encouraged to review them.
           </p>
 
           <h2>5. Security</h2>
@@ -442,9 +445,7 @@
       <section style={active_tab !== 8 ? 'display: none;' : ''}>
         <h2>Contact</h2>
         <div class="overlay__section-text">
-          <p>
-            Get in touch at david [dot] norton [at] notastranger [dot] org.
-          </p>
+          <p>Get in touch at david [dot] norton [at] notastranger [dot] org.</p>
         </div>
       </section>
     </div>

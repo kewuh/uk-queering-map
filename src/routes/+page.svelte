@@ -19,7 +19,10 @@
   />
 
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://migrant-d0hmw57eq-davids-projects-b5d97cc3.vercel.app/" />
+  <meta
+    property="og:url"
+    content="https://migrant-d0hmw57eq-davids-projects-b5d97cc3.vercel.app/"
+  />
   <meta property="og:title" content="Placemarked" />
   <meta
     property="og:description"

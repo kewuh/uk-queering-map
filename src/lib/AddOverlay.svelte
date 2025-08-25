@@ -24,7 +24,7 @@
 
   const showSubmissionSuccessNotification = () => {
     toast.push(
-      'Your story was successfully submitted. It will appear publicly on the map once it has been approved by our moderators.',
+      'Your story was successfully submitted and is now visible on the map!',
       {
         theme: {
           '--toastBarHeight': 0
@@ -58,6 +58,10 @@
     if (response.status === 201) {
       closeAddOverlay();
       showSubmissionSuccessNotification();
+      // Refresh the page to show the new story on the map
+      setTimeout(() => {
+        window.location.reload();
+      }, 1000);
     } else {
       const result = await response.json();
       alert(`Error: ${result.error}`);

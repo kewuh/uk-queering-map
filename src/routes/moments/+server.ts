@@ -510,7 +510,60 @@ const momentsData = {
 };
 
 export const GET: RequestHandler = async () => {
-  return json(momentsData);
+  console.log('Fetching moments from Supabase...');
+
+  // Fetch approved moments from Supabase
+  const { data, error } = await supabase
+    .from('moments')
+    .select('short_id, location, description')
+    .eq('status', 'approved');
+
+  if (error) {
+    console.error('Error fetching moments:', error);
+    console.log('Falling back to sample data');
+    // Fallback to sample data if database query fails
+    return json(momentsData);
+  }
+
+  console.log(`Found ${data?.length || 0} approved moments in database`);
+
+  if (!data || data.length === 0) {
+    console.log('No approved moments found, returning empty map');
+    return json({
+      type: 'FeatureCollection',
+      features: []
+    });
+  }
+
+  // Convert database data to GeoJSON format
+  const geoJsonData = {
+    type: 'FeatureCollection',
+    features: data.map((moment) => {
+      // Handle the location data safely
+      let coordinates = [0, 0];
+      if (moment.location && typeof moment.location === 'object') {
+        const location = moment.location as any;
+        if (location.coordinates && Array.isArray(location.coordinates)) {
+          coordinates = location.coordinates;
+        }
+      }
+
+      return {
+        type: 'Feature',
+        id: moment.short_id,
+        geometry: {
+          type: 'Point',
+          coordinates: coordinates
+        },
+        properties: {
+          description: moment.description
+        }
+      };
+    })
+  };
+
+  console.log('Returning real database data');
+  return json(geoJsonData);
 };
 
 export const POST: RequestHandler = async ({ request }) => {
@@ -524,7 +577,7 @@ export const POST: RequestHandler = async ({ request }) => {
     {
       description,
       location: `SRID=4326;POINT(${lng} ${lat})`,
-      status: 'pending'
+      status: 'approved'
     }
   ]);
 

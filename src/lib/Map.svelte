@@ -167,25 +167,37 @@
             return;
           }
 
-          getMoment(feature.id)
-            .then((text) => {
-              const description = text;
-              if (coordinates.length === 2) {
-                new Popup({
-                  offset: [0, -markerHeight],
-                  anchor: 'bottom',
-                  maxWidth: 'none'
-                })
-                  .setLngLat(coordinates as LngLatLike)
-                  .setHTML(description)
-                  .addTo(map);
-              } else {
-                console.error('Invalid coordinates format');
-              }
-            })
-            .catch((error) => {
-              console.error('Error fetching moment:', error);
-            });
+          // Use description from GeoJSON properties if available, otherwise fetch from API
+          let description = feature.properties?.description;
+
+          if (!description) {
+            // Fallback to API call if description not in properties
+            getMoment(feature.id)
+              .then((text) => {
+                description = text;
+                showPopup(coordinates, description);
+              })
+              .catch((error) => {
+                console.error('Error fetching moment:', error);
+              });
+          } else {
+            showPopup(coordinates, description);
+          }
+
+          function showPopup(coords: number[], desc: string) {
+            if (coords.length === 2) {
+              new Popup({
+                offset: [0, -markerHeight],
+                anchor: 'bottom',
+                maxWidth: 'none'
+              })
+                .setLngLat(coords as LngLatLike)
+                .setHTML(desc)
+                .addTo(map);
+            } else {
+              console.error('Invalid coordinates format');
+            }
+          }
         }
       );
 

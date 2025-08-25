@@ -110,25 +110,26 @@ const descriptions: DescriptionsCacheType = {
 
 export async function GET({ params }) {
   const { id } = params;
-  let description;
 
-  // Try to fetch from Supabase first
-  const { data } = await supabase
+  console.log(`Fetching moment with id: ${id}`);
+
+  // Fetch from Supabase
+  const { data, error } = await supabase
     .from('moments')
-    .select('description')
-    .eq('id', id)
+    .select('description, short_id')
+    .eq('short_id', id)
     .single();
 
-  if (data && data.description) {
-    description = data.description;
-  } else {
-    // Fallback to inlined test data
-    description = descriptions[Number(id)];
-  }
-
-  if (!description) {
+  if (error) {
+    console.error('Error fetching moment:', error);
     throw error(404, 'Description not found');
   }
 
-  return json({ short_id: id, description });
+  if (!data || !data.description) {
+    console.log(`No moment found with short_id: ${id}`);
+    throw error(404, 'Description not found');
+  }
+
+  console.log(`Found moment: ${data.description}`);
+  return json({ short_id: id, description: data.description });
 }
