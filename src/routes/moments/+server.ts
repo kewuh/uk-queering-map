@@ -511,6 +511,12 @@ const momentsData = {
 
 export const GET: RequestHandler = async () => {
   console.log('Fetching moments from Supabase...');
+  
+  // Debug environment variables
+  console.log('SUPABASE_URL available:', !!process.env.SUPABASE_URL);
+  console.log('VITE_SUPABASE_URL available:', !!process.env.VITE_SUPABASE_URL);
+  console.log('SUPABASE_ANON_KEY available:', !!process.env.SUPABASE_ANON_KEY);
+  console.log('VITE_SUPABASE_ANON_KEY available:', !!process.env.VITE_SUPABASE_ANON_KEY);
 
   // Fetch approved moments from Supabase
   const { data, error } = await supabase

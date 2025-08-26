@@ -480,27 +480,6 @@
   a {
     cursor: pointer;
   }
-  ul {
-    list-style-type: disc;
-    margin-top: -5px;
-
-    padding-right: 1em;
-  }
-  ul.voidcircle li {
-    margin-top: -5px;
-    padding-bottom: 10px;
-  }
-  ul.voidcircle {
-    padding-left: 3.5em;
-    padding-right: 1.5em;
-    list-style-type: circle;
-  }
-  .__press h2.divider {
-    border-top: 1.01px solid var(--color-dark);
-    padding-top: 1em;
-    padding-left: 2.05rem;
-    font-weight: bold !important;
-  }
   .__press {
     display: flex;
     flex-direction: column;
