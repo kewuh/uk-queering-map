@@ -10,6 +10,7 @@
 
   import { SvelteToast, toast } from '@zerodevx/svelte-toast';
 
+
   let momentDescription = 'This is where...';
   let userEmail = 'Email address (optional)';
   let isAddButtonDisabled = true;
@@ -58,6 +59,32 @@
     });
 
     if (response.status === 201) {
+      // Create Brevo contact if email is provided and not the default text
+      if (userEmail && userEmail !== 'Email address (optional)' && userEmail.trim() !== '') {
+        try {
+          const storyLocation = `${Math.round(($activeMarkerCoords?.lng || 0) * 10000) / 10000}, ${Math.round(($activeMarkerCoords?.lat || 0) * 10000) / 10000}`;
+          
+          const brevoResponse = await fetch('/api/brevo-contact', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              email: userEmail,
+              storyLocation: storyLocation
+            })
+          });
+
+          if (brevoResponse.ok) {
+            console.log('Contact added to Brevo successfully');
+          } else {
+            console.error('Failed to add contact to Brevo');
+          }
+        } catch (error) {
+          console.error('Error creating Brevo contact:', error);
+        }
+      }
+
       closeAddOverlay();
       showSubmissionSuccessNotification();
       // Refresh the page to show the new story on the map
@@ -323,8 +350,6 @@
     color: var(--color-dark);
     font-style: italic;
   }
-
-
 
   .subform {
     margin: auto;
