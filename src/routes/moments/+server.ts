@@ -1,6 +1,7 @@
 import { json } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
 import { supabase } from '$lib/clients/supabaseClient';
+import { CLOUDFLARE_TURNSTILE_SECRET } from '$env/static/private';
 
 // Inline the moments data to avoid file system issues in deployment
 const momentsData = {
@@ -584,10 +585,41 @@ export const GET: RequestHandler = async () => {
 };
 
 export const POST: RequestHandler = async ({ request }) => {
-  const { lng, lat, description, email } = await request.json();
+  const { lng, lat, description, email, turnstileToken } = await request.json();
 
   if (!description?.trim()) {
     return json({ error: 'Description cannot be empty.' }, { status: 400 });
+  }
+
+  // Validate CAPTCHA token
+  if (!turnstileToken) {
+    return json({ error: 'CAPTCHA verification required.' }, { status: 400 });
+  }
+
+  try {
+    const captchaResponse = await fetch(
+      'https://challenges.cloudflare.com/turnstile/v0/siteverify',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: new URLSearchParams({
+          secret: CLOUDFLARE_TURNSTILE_SECRET,
+          response: turnstileToken
+        })
+      }
+    );
+
+    const captchaResult = await captchaResponse.json();
+
+    if (!captchaResult.success) {
+      console.error('CAPTCHA verification failed:', captchaResult);
+      return json({ error: 'CAPTCHA verification failed.' }, { status: 400 });
+    }
+  } catch (error) {
+    console.error('Error verifying CAPTCHA:', error);
+    return json({ error: 'CAPTCHA verification error.' }, { status: 500 });
   }
 
   const { error } = await supabase.from('moments').insert([

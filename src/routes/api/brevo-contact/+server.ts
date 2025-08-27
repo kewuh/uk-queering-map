@@ -33,7 +33,7 @@ export const POST: RequestHandler = async ({ request }) => {
     const contactResponse = await fetch(BREVO_CONTACTS_API_URL, {
       method: 'POST',
       headers: {
-        'accept': 'application/json',
+        accept: 'application/json',
         'content-type': 'application/json',
         'api-key': BREVO_API_KEY
       },
@@ -42,7 +42,11 @@ export const POST: RequestHandler = async ({ request }) => {
 
     if (!contactResponse.ok) {
       const errorData = await contactResponse.text();
-      console.error('Brevo contact creation error:', contactResponse.status, errorData);
+      console.error(
+        'Brevo contact creation error:',
+        contactResponse.status,
+        errorData
+      );
       return json({ error: 'Failed to create contact' }, { status: 500 });
     }
 
@@ -82,7 +86,7 @@ export const POST: RequestHandler = async ({ request }) => {
     const emailResponse = await fetch(BREVO_SMTP_API_URL, {
       method: 'POST',
       headers: {
-        'accept': 'application/json',
+        accept: 'application/json',
         'content-type': 'application/json',
         'api-key': BREVO_API_KEY
       },
@@ -92,18 +96,22 @@ export const POST: RequestHandler = async ({ request }) => {
     if (emailResponse.ok) {
       const emailResult = await emailResponse.json();
       console.log('Welcome email sent successfully:', emailResult);
-      return json({ 
-        success: true, 
+      return json({
+        success: true,
         contact: contactResult,
         email: emailResult,
         message: 'Contact created and welcome email sent'
       });
     } else {
       const emailErrorData = await emailResponse.text();
-      console.error('Brevo email sending error:', emailResponse.status, emailErrorData);
+      console.error(
+        'Brevo email sending error:',
+        emailResponse.status,
+        emailErrorData
+      );
       // Still return success for contact creation, but log email error
-      return json({ 
-        success: true, 
+      return json({
+        success: true,
         contact: contactResult,
         emailError: 'Failed to send welcome email',
         message: 'Contact created but email failed'

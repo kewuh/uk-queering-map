@@ -7,12 +7,15 @@
   import ActionButton from './ActionButton.svelte';
   import CloseButton from './CloseButton.svelte';
   import { activeMarkerCoords } from '../stores';
+  import { PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY } from '$env/static/public';
 
   import { SvelteToast, toast } from '@zerodevx/svelte-toast';
+  import { onMount } from 'svelte';
 
   let momentDescription = 'This is where...';
   let userEmail = 'Email address (optional)';
   let isAddButtonDisabled = true;
+  let turnstileToken = '';
 
   function closeAddOverlay() {
     addOverlayVisible.update(() => false);
@@ -39,14 +42,37 @@
   $: isAddButtonDisabled =
     !$activeMarkerCoords?.lng ||
     !$activeMarkerCoords?.lat ||
-    !momentDescription;
+    !momentDescription ||
+    !turnstileToken;
+
+  // Global callback function for Turnstile
+  function onSubmit(token: string) {
+    turnstileToken = token;
+  }
+
+  // Make onSubmit globally available for Turnstile
+  onMount(() => {
+    (window as { onSubmit?: (token: string) => void }).onSubmit = onSubmit;
+  });
+
+  // Load Turnstile script
+  onMount(() => {
+    if (!(window as { turnstile?: unknown }).turnstile) {
+      const script = document.createElement('script');
+      script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
+      script.async = true;
+      script.defer = true;
+      document.head.appendChild(script);
+    }
+  });
 
   async function handleAddMoment() {
     const payload = JSON.stringify({
       lng: $activeMarkerCoords?.lng,
       lat: $activeMarkerCoords?.lat,
       description: momentDescription,
-      email: userEmail
+      email: userEmail,
+      turnstileToken: turnstileToken
     });
 
     const response = await fetch('moments', {
@@ -147,9 +173,10 @@
             ></textarea>
 
             <input
-              type="email"
+              type="text"
               bind:value={userEmail}
               class="email-input"
+              placeholder="Email address (optional)"
               on:click={() => {
                 if (userEmail === 'Email address (optional)') {
                   userEmail = '';
@@ -176,6 +203,15 @@
               You don't have to leave your email, but if you do, we'll use this
               to keep you updated on how you can get involved.
             </div>
+
+            <!-- Cloudflare Turnstile CAPTCHA -->
+            <div
+              class="cf-turnstile"
+              data-sitekey={PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY}
+              data-size="invisible"
+              data-callback="onSubmit"
+            ></div>
+
             <ActionButton
               functionOnClick={handleAddMoment}
               isDisabled={isAddButtonDisabled}>Add</ActionButton
@@ -352,6 +388,12 @@
     font-size: 0.75em;
     color: var(--color-dark);
     font-style: italic;
+  }
+
+  .cf-turnstile {
+    margin-top: 1em;
+    display: flex;
+    justify-content: center;
   }
 
   .subform {
