@@ -10,7 +10,8 @@
 
   import { SvelteToast, toast } from '@zerodevx/svelte-toast';
 
-  let momentDescription = '';
+  let momentDescription = 'This is where...';
+  let userEmail = 'Email address (optional)';
   let isAddButtonDisabled = true;
 
   function closeAddOverlay() {
@@ -44,7 +45,8 @@
     const payload = JSON.stringify({
       lng: $activeMarkerCoords?.lng,
       lat: $activeMarkerCoords?.lat,
-      description: momentDescription
+      description: momentDescription,
+      email: userEmail
     });
 
     const response = await fetch('moments', {
@@ -94,10 +96,10 @@
         <div class="overlay__section-title">Add Your Story</div>
         <div class="overlay__section-text">
           <div class="partial_div-numbered">
-            <span>1</span>Click the location of your story on the map.
+            <span>1</span>Share your story in the text box below.
           </div>
           <div class="partial_div-numbered">
-            <span>2</span>Share your story in the the text box below.
+            <span>2</span>Optionally add your email address.
           </div>
           <div class="partial_div-numbered">
             <span>3</span>Click the Add button.
@@ -107,7 +109,23 @@
               bind:value={momentDescription}
               id="txt_contents"
               class="subform"
+              on:click={() => {
+                if (momentDescription === 'This is where...') {
+                  momentDescription = '';
+                }
+              }}
             ></textarea>
+
+            <input
+              type="email"
+              bind:value={userEmail}
+              class="email-input"
+              on:click={() => {
+                if (userEmail === 'Email address (optional)') {
+                  userEmail = '';
+                }
+              }}
+            />
 
             <div class="recaptcha-text">
               By submitting I agree to the <a
@@ -123,6 +141,10 @@
                 target="_blank"
                 rel="noopener">Privacy Policy</a
               >.
+            </div>
+            <div class="email-note">
+              You don't have to leave your email, but if you do, we'll use this
+              to keep you updated on how you can get involved.
             </div>
             <ActionButton
               functionOnClick={handleAddMoment}
@@ -231,6 +253,11 @@
       height: 125px;
       margin-top: 10px;
     }
+    .overlay--add .email-input {
+      padding: 10px;
+      width: 99%;
+      margin-top: 10px;
+    }
     .overlay--add {
       border: 1.01px solid var(--color-dark);
       position: fixed;
@@ -278,6 +305,26 @@
     margin-top: 0.5em;
     font-size: 0.75em;
   }
+
+  .email-input {
+    margin-top: 0.5em;
+    padding: 8px;
+    width: 100%;
+    font-size: 12pt;
+    background-color: #4a90e2;
+    border: 1.01px solid var(--color-dark);
+    font-family: 'Apfel Grotezk', sans-serif;
+    box-sizing: border-box;
+  }
+
+  .email-note {
+    margin-top: 0.5em;
+    font-size: 0.75em;
+    color: var(--color-dark);
+    font-style: italic;
+  }
+
+
 
   .subform {
     margin: auto;

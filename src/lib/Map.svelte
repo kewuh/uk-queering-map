@@ -21,7 +21,7 @@
   import styleJson from '$lib/data/pmtiles/style.json';
   const style = styleJson as StyleSpecification;
   import addMarkerImage from '$lib/assets/add-marker.png';
-  import { activeMarkerCoords } from '../stores';
+  import { activeMarkerCoords, addOverlayVisible } from '../stores';
   import type { FeatureCollection, Point, GeoJsonProperties } from 'geojson';
 
   let map: MapType;
@@ -247,6 +247,9 @@
 
         const { lng, lat } = e.lngLat;
         activeMarkerCoords.set({ lng, lat });
+
+        // Show the Add Your Story panel when clicking on empty map area
+        addOverlayVisible.set(true);
       });
     });
   });

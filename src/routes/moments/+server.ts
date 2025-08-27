@@ -584,7 +584,7 @@ export const GET: RequestHandler = async () => {
 };
 
 export const POST: RequestHandler = async ({ request }) => {
-  const { lng, lat, description } = await request.json();
+  const { lng, lat, description, email } = await request.json();
 
   if (!description?.trim()) {
     return json({ error: 'Description cannot be empty.' }, { status: 400 });
@@ -594,7 +594,8 @@ export const POST: RequestHandler = async ({ request }) => {
     {
       description,
       location: `SRID=4326;POINT(${lng} ${lat})`,
-      status: 'approved'
+      status: 'approved',
+      email: email || null
     }
   ]);
 

@@ -9,6 +9,7 @@
   import { addOverlayVisible, infoOverlayVisible } from '../stores';
 
   import DonatePopup from '$lib/DonatePopup.svelte';
+
 </script>
 
 <svelte:head>
