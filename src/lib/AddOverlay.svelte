@@ -10,7 +10,6 @@
 
   import { SvelteToast, toast } from '@zerodevx/svelte-toast';
 
-
   let momentDescription = 'This is where...';
   let userEmail = 'Email address (optional)';
   let isAddButtonDisabled = true;
@@ -60,10 +59,14 @@
 
     if (response.status === 201) {
       // Create Brevo contact if email is provided and not the default text
-      if (userEmail && userEmail !== 'Email address (optional)' && userEmail.trim() !== '') {
+      if (
+        userEmail &&
+        userEmail !== 'Email address (optional)' &&
+        userEmail.trim() !== ''
+      ) {
         try {
           const storyLocation = `${Math.round(($activeMarkerCoords?.lng || 0) * 10000) / 10000}, ${Math.round(($activeMarkerCoords?.lat || 0) * 10000) / 10000}`;
-          
+
           const brevoResponse = await fetch('/api/brevo-contact', {
             method: 'POST',
             headers: {
