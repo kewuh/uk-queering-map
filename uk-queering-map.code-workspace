@@ -1,0 +1,27 @@
+{
+  "folders": [
+    {
+      "name": "uk-queering-map",
+      "path": "."
+    }
+  ],
+  "settings": {
+    "typescript.preferences.includePackageJsonAutoImports": "on",
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "files.exclude": {
+      "**/node_modules": true,
+      "**/.svelte-kit": true,
+      "**/build": true,
+      "**/.DS_Store": true
+    }
+  },
+  "extensions": {
+    "recommendations": [
+      "svelte.svelte-vscode",
+      "esbenp.prettier-vscode",
+      "bradlc.vscode-tailwindcss",
+      "ms-vscode.vscode-typescript-next"
+    ]
+  }
+}

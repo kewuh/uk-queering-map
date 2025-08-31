@@ -59,9 +59,11 @@
       const response = await fetch('/moments');
       const data = await response.json();
 
-                const filteredFeatures = data.features.filter((feature: { properties?: { feeling?: string } }) => {
-            return feature.properties?.feeling === feeling;
-          });
+      const filteredFeatures = data.features.filter(
+        (feature: { properties?: { feeling?: string } }) => {
+          return feature.properties?.feeling === feeling;
+        }
+      );
 
       source.setData({
         type: 'FeatureCollection',

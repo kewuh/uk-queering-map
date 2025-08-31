@@ -1,11 +1,26 @@
-# UK Queering the Map
+# Placemarked
 
-Queering the Map is a community-based platform where individuals anonymously pin their queer experiences and stories to specific locations on a global map.
+Placemarked is a community-based platform where individuals share their immigration experiences and stories across the UK on an interactive map. It connects personal narratives to political action, helping document the human impact of immigration policies and enabling advocacy for change.
 
-## 🗺️ UK-Focused Features
+## 🗺️ About Placemarked
 
+Placemarked serves multiple purposes:
+- **Personal**: A way for individuals to document and share their immigration experiences
+- **Community**: A collective map showing the human impact of immigration policies across the UK
+- **Political**: A bridge between personal immigration stories and policy advocacy
+- **Historical**: A living archive of immigration experiences and their effects on real people
+
+## 🗺️ Key Features
+
+- **Interactive Map**: Visual representation of immigration experiences across the UK
+- **Story Sharing**: Users can pin their immigration experiences to specific locations
+- **Location Privacy**: Exact locations are obscured for safety - stories appear in general areas rather than precise coordinates
+- **Emoji Feelings**: Categorize emotional responses to immigration experiences (happy, neutral, sad)
+- **Filtering System**: Filter stories by emotional tone
+- **Political Action**: Direct connection to immigration advocacy tools (Re:Immigration Email Drafter)
+- **Community Moderation**: Volunteer-led content review to protect users and ensure anonymity
 - **UK-centered map** (London coordinates)
-- **100 UK sample data points**
+- **Real immigration stories** from the community
 - **OpenStreetMap tiles** (no CORS issues)
 - **Automatic deployments** from GitHub
 

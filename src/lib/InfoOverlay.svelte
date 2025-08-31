@@ -144,42 +144,38 @@
         <h2>Moderation Guidelines</h2>
         <div class="overlay__section-text">
           <p>
-            Posts to Placemarked are moderated by a small group of volunteers
-            before they appear publicly. This to ensure the following are not
-            added to the platform:
+            Posts to Placemarked appear on the site as soon as they are
+            submitted. A small group of volunteer moderators then review them to
+            help keep the platform safe, respectful and community-centred. Posts
+            may be removed if they contain:
           </p>
 
           <div class="partial_div-numbered">
             <span>1</span>
             <p>
-              Breaches of Anonymity <br />
-              We do not approve posts that breach your or anyone else's anonymity.
-              This means posts containing last names, phone numbers, email addresses,
-              social media handles, or exact addresses will not be approved.
+              <strong>Breaches of anonymity</strong><br />
+              Posts must not share personal details about you or others. This includes
+              surnames, phone numbers, email addresses, social media accounts, or
+              exact home addresses.
             </p>
           </div>
 
           <div class="partial_div-numbered">
             <span>2</span>
             <p>
-              Hate Speech <br />
-              We do not approve posts that degrade or threaten a group of people
-              based on race, ethnicity, citizenship, ability, sexuality, sex, gender,
-              or class.
+              <strong>Hate speech</strong><br />
+              Content that insults, threatens or demeans people on the basis of race,
+              ethnicity, nationality, disability, sexuality, sex, gender or class
+              will be taken down.
             </p>
           </div>
           <div class="partial_div-numbered">
             <span>3</span>
             <p>
-              Spam/Advertising <br />
-              We do not approve spam posts, or advertisements of any kind.
+              <strong>Spam or advertising</strong><br />
+              Promotional or commercial content, including spam, will not be permitted.
             </p>
           </div>
-
-          <p style="margin-top: 0px;">
-            The moderation process is to ensure the safety of the map, and is
-            not about policing expressions or identities.
-          </p>
         </div>
 
         <h2>Request Removal</h2>
@@ -196,12 +192,7 @@
         <h2>Why can't I see my post on the map?</h2>
         <div class="overlay__section-text">
           <p>
-            In 99.9% of cases, it is because it has not been reviewed by our
-            moderation team yet. All posts are moderated by a small group of
-            volunteers before appearing publicly on the map, in order to ensure
-            they do not contain breaches of anonymity, hate speech, or
-            spam/advertising. Rest assured that your post will be visible as
-            soon as we reach it in the moderation queue.
+            For now, stories appear on the map right away. In rare cases, an automatic spam filter may block a submission. Our volunteer moderators also review stories afterwards to protect anonymity and remove spam or hate speech. If your post is flagged, it may be taken down, but in most cases you should see it immediately.
           </p>
         </div>
         <h2>Can I delete my post?</h2>
@@ -604,7 +595,7 @@
     font-size: 15px;
     color: var(--color-dark);
     display: block;
-    font-weight: 500;
+    font-weight: bold;
     padding-bottom: 4px;
     border-top: 1px solid var(--color-dark);
     padding-left: 2.05rem;
@@ -617,6 +608,7 @@
     h2 {
       font-size: 15px;
       padding-top: 1em;
+      font-weight: bold;
     }
   }
 
@@ -668,6 +660,7 @@
     h2 {
       padding-top: 1.05em;
       padding-bottom: 0px;
+      font-weight: bold;
     }
     .overlay--info {
       margin-top: 9px;

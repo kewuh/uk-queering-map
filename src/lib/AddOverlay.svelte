@@ -17,9 +17,31 @@
   let selectedFeeling = '';
   let isAddButtonDisabled = true;
   let turnstileToken = '';
+  let showActionModal = false;
 
   function closeAddOverlay() {
     addOverlayVisible.update(() => false);
+  }
+
+  function redirectToEmailDrafter() {
+    // Create URL parameters based on the submitted data
+    const params = new URLSearchParams();
+    
+    if (userEmail && userEmail !== 'Email address (optional)' && userEmail.trim() !== '') {
+      params.append('email', userEmail);
+    }
+    
+    if (momentDescription && momentDescription !== 'This is where...') {
+      params.append('story', momentDescription);
+    }
+    
+    if (selectedFeeling) {
+      params.append('feeling', selectedFeeling);
+    }
+    
+    // Redirect to the Re:Immigration Email Drafter with parameters
+    window.open(`https://re-immigration.notastranger.org/?${params.toString()}`, '_blank');
+    showActionModal = false;
   }
 
   function openInfoOverlay(tabActive: number) {
@@ -116,12 +138,8 @@
         }
       }
 
-      closeAddOverlay();
+      showActionModal = true;
       showSubmissionSuccessNotification();
-      // Refresh the page to show the new story on the map
-      setTimeout(() => {
-        window.location.reload();
-      }, 1000);
     } else {
       const result = await response.json();
       alert(`Error: ${result.error}`);
@@ -132,6 +150,33 @@
     target: document.body
   });
 </script>
+
+<!-- Action Modal -->
+{#if showActionModal}
+<div class="action-modal-overlay">
+  <div class="action-modal">
+    <div class="action-modal-content">
+      <h2>Thank you for sharing your story.</h2>
+      <p>Your experience is now part of the map. But it can also help change immigration policy.</p>
+      
+      <p>With our Re:Immigration Email Drafter, you can:</p>
+      <ul>
+        <li>Send your story directly to your MP.</li>
+        <li>Submit it to the government's immigration consultation.</li>
+      </ul>
+      
+      <div class="action-modal-buttons">
+        <button class="action-btn primary" on:click={redirectToEmailDrafter}>
+          Use my story to take action ➜
+        </button>
+        <button class="action-btn secondary" on:click={() => showActionModal = false}>
+          Maybe later
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+{/if}
 
 <aside class="overlay overlay--add">
   <div class="action-button-container">
@@ -189,7 +234,9 @@
             />
 
             <div class="feeling-section">
-              <label for="feeling-options">How does this memory make you feel? (optional)</label>
+              <label for="feeling-options"
+                >How does this memory make you feel? (optional)</label
+              >
               <div class="feeling-options" id="feeling-options">
                 {#if !selectedFeeling || selectedFeeling === 'happy'}
                   <button
@@ -527,5 +574,104 @@
   .overlay--add textarea {
     box-sizing: border-box !important;
     padding: 10px !important;
+  }
+
+  /* Action Modal Styles */
+  .action-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+  }
+
+  .action-modal {
+    background: var(--color-pink);
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 2rem;
+    max-width: 500px;
+    width: 90%;
+    margin: 1rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  }
+
+  .action-modal-content h2 {
+    margin: 0 0 1rem 0;
+    font-size: 1.5rem;
+    color: var(--color-dark);
+  }
+
+  .action-modal-content p {
+    margin: 0 0 1rem 0;
+    color: var(--color-dark);
+    line-height: 1.5;
+  }
+
+  .action-modal-content ul {
+    margin: 0 0 1.5rem 0;
+    padding-left: 1.5rem;
+    color: var(--color-dark);
+  }
+
+  .action-modal-content li {
+    margin: 0.5rem 0;
+    line-height: 1.4;
+  }
+
+  .action-modal-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .action-btn {
+    padding: 0.75rem 1.5rem;
+    border: 1px solid black;
+    border-radius: 4px;
+    font-family: 'Apfel Grotezk', sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex: 1;
+    min-width: 120px;
+  }
+
+  .action-btn.primary {
+    background: #4a90e2;
+    color: white;
+  }
+
+  .action-btn.primary:hover {
+    background: #357abd;
+  }
+
+  .action-btn.secondary {
+    background: var(--color-pink);
+    color: var(--color-dark);
+  }
+
+  .action-btn.secondary:hover {
+    background: #e6e6e6;
+  }
+
+  @media (max-width: 600px) {
+    .action-modal {
+      padding: 1.5rem;
+      margin: 0.5rem;
+    }
+    
+    .action-modal-buttons {
+      flex-direction: column;
+    }
+    
+    .action-btn {
+      width: 100%;
+    }
   }
 </style>

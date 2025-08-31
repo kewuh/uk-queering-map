@@ -586,7 +586,8 @@ export const GET: RequestHandler = async () => {
 };
 
 export const POST: RequestHandler = async ({ request }) => {
-  const { lng, lat, description, email, feeling, turnstileToken } = await request.json();
+  const { lng, lat, description, email, feeling, turnstileToken } =
+    await request.json();
 
   if (!description?.trim()) {
     return json({ error: 'Description cannot be empty.' }, { status: 400 });
