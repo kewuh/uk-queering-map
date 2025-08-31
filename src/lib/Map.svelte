@@ -29,8 +29,12 @@
   let isMomentLayerClicked = false;
   let hasShownFirstPopup = false;
   let currentFilter: string | null = null;
+  let featuredAnimationTimeout: ReturnType<typeof setTimeout> | null = null;
+  let userActivityTimeout: ReturnType<typeof setTimeout> | null = null;
+  let isUserActive = false;
 
   const initialState = { lng: -0.1276, lat: 51.5074, zoom: 6 };
+
 
   const markerHeight = 39;
   const markerId = 'moments';
@@ -83,6 +87,181 @@
     }
   }
 
+  function resetUserActivityTimer() {
+    isUserActive = true;
+
+    // Clear existing timeout
+    if (userActivityTimeout) {
+      clearTimeout(userActivityTimeout);
+    }
+
+    // Set new timeout for 30 seconds
+    userActivityTimeout = setTimeout(() => {
+      isUserActive = false;
+      // Restart featured animation after 30 seconds of inactivity (only if add overlay is closed)
+      setTimeout(() => {
+        if (!$addOverlayVisible) {
+          animateToFeaturedStory();
+        }
+      }, 2000);
+    }, 30000);
+  }
+
+  function stopFeaturedAnimation() {
+    if (featuredAnimationTimeout) {
+      clearTimeout(featuredAnimationTimeout);
+      featuredAnimationTimeout = null;
+    }
+  }
+
+  async function animateToFeaturedStory() {
+    if (isUserActive || $addOverlayVisible) return;
+
+    try {
+      const response = await fetch('/moments');
+      const data = await response.json();
+
+      // Find all featured stories ordered by featured_order
+      const featuredStories = data.features
+        .filter((feature: { properties?: { featured?: boolean } }) => feature.properties?.featured === true)
+        .sort(
+          (a: { properties?: { featured_order?: number } }, b: { properties?: { featured_order?: number } }) =>
+            (a.properties?.featured_order || 999) -
+            (b.properties?.featured_order || 999)
+        );
+
+      if (featuredStories.length > 0) {
+        // Animate to the first featured story
+        const firstStory = featuredStories[0];
+        const [lng1, lat1] = firstStory.geometry.coordinates;
+
+        // Animate to the first featured story with a smooth transition
+        map.flyTo({
+          center: [lng1, lat1],
+          zoom: 8,
+          duration: 3000,
+          essential: true
+        });
+
+        // Show the popup for the first featured story
+        featuredAnimationTimeout = setTimeout(() => {
+          if (isUserActive) return;
+
+          const description1 = firstStory.properties?.description;
+          const feeling1 = firstStory.properties?.feeling;
+
+          let emoji1 = '';
+          if (feeling1 === 'happy') emoji1 = '🙂';
+          else if (feeling1 === 'neutral') emoji1 = '😐';
+          else if (feeling1 === 'sad') emoji1 = '🙁';
+
+          const popupContent1 = emoji1
+            ? `${emoji1} | ${description1}`
+            : description1;
+
+          new Popup({
+            offset: [0, -markerHeight],
+            anchor: 'bottom',
+            maxWidth: 'none'
+          })
+            .setLngLat([lng1, lat1])
+            .setHTML(popupContent1)
+            .addTo(map);
+        }, 3500);
+
+        // If there's a second featured story, animate to it after 7 seconds
+        if (featuredStories.length > 1) {
+          featuredAnimationTimeout = setTimeout(() => {
+            if (isUserActive) return;
+
+            const secondStory = featuredStories[1];
+            const [lng2, lat2] = secondStory.geometry.coordinates;
+
+            // Animate to the second featured story
+            map.flyTo({
+              center: [lng2, lat2],
+              zoom: 8,
+              duration: 3000,
+              essential: true
+            });
+
+            // Show the popup for the second featured story
+            featuredAnimationTimeout = setTimeout(() => {
+              if (isUserActive) return;
+
+              const description2 = secondStory.properties?.description;
+              const feeling2 = secondStory.properties?.feeling;
+
+              let emoji2 = '';
+              if (feeling2 === 'happy') emoji2 = '🙂';
+              else if (feeling2 === 'neutral') emoji2 = '😐';
+              else if (feeling2 === 'sad') emoji2 = '🙁';
+
+              const popupContent2 = emoji2
+                ? `${emoji2} | ${description2}`
+                : description2;
+
+              new Popup({
+                offset: [0, -markerHeight],
+                anchor: 'bottom',
+                maxWidth: 'none'
+              })
+                .setLngLat([lng2, lat2])
+                .setHTML(popupContent2)
+                .addTo(map);
+            }, 3500);
+          }, 10500); // 3.5s + 7s = 10.5s total
+        }
+
+        // If there's a third featured story, animate to it after 7 more seconds
+        if (featuredStories.length > 2) {
+          featuredAnimationTimeout = setTimeout(() => {
+            if (isUserActive) return;
+
+            const thirdStory = featuredStories[2];
+            const [lng3, lat3] = thirdStory.geometry.coordinates;
+
+            // Animate to the third featured story
+            map.flyTo({
+              center: [lng3, lat3],
+              zoom: 8,
+              duration: 3000,
+              essential: true
+            });
+
+            // Show the popup for the third featured story
+            featuredAnimationTimeout = setTimeout(() => {
+              if (isUserActive) return;
+
+              const description3 = thirdStory.properties?.description;
+              const feeling3 = thirdStory.properties?.feeling;
+
+              let emoji3 = '';
+              if (feeling3 === 'happy') emoji3 = '🙂';
+              else if (feeling3 === 'neutral') emoji3 = '😐';
+              else if (feeling3 === 'sad') emoji3 = '🙁';
+
+              const popupContent3 = emoji3
+                ? `${emoji3} | ${description3}`
+                : description3;
+
+              new Popup({
+                offset: [0, -markerHeight],
+                anchor: 'bottom',
+                maxWidth: 'none'
+              })
+                .setLngLat([lng3, lat3])
+                .setHTML(popupContent3)
+                .addTo(map);
+            }, 3500);
+          }, 17500); // 10.5s + 7s = 17.5s total
+        }
+      }
+    } catch (error) {
+      console.error('Error animating to featured story:', error);
+    }
+  }
+
   async function loadImageAndAddToMap(
     map: MapType,
     imageUrl: string,
@@ -126,6 +305,13 @@
       minZoom: 0,
       maxZoom: 12,
       attributionControl: false
+    });
+
+    // Listen for map refresh events
+    window.addEventListener('refreshMapData', () => {
+      if (map && map.isStyleLoaded()) {
+        filterData(currentFilter);
+      }
     });
     map.addControl(
       new AttributionControl({
@@ -181,6 +367,10 @@
         'click',
         markerLayerId,
         function (e: MapMouseEvent & { features?: MapGeoJSONFeature[] }) {
+          // Stop featured animation and reset user activity timer
+          stopFeaturedAnimation();
+          resetUserActivityTimer();
+
           isMomentLayerClicked = true;
           if (!e.features || e.features.length === 0) {
             return;
@@ -279,6 +469,10 @@
       });
 
       map.on('click', (e: MapMouseEvent) => {
+        // Stop featured animation and reset user activity timer
+        stopFeaturedAnimation();
+        resetUserActivityTimer();
+
         if (isMomentLayerClicked) {
           isMomentLayerClicked = false;
           return;
@@ -293,6 +487,11 @@
           hasShownFirstPopup = true;
         }
       });
+
+      // Animate to featured story after map loads
+      setTimeout(() => {
+        animateToFeaturedStory();
+      }, 2000);
     });
   });
 

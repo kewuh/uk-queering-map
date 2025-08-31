@@ -192,7 +192,11 @@
         <h2>Why can't I see my post on the map?</h2>
         <div class="overlay__section-text">
           <p>
-            For now, stories appear on the map right away. In rare cases, an automatic spam filter may block a submission. Our volunteer moderators also review stories afterwards to protect anonymity and remove spam or hate speech. If your post is flagged, it may be taken down, but in most cases you should see it immediately.
+            For now, stories appear on the map right away. In rare cases, an
+            automatic spam filter may block a submission. Our volunteer
+            moderators also review stories afterwards to protect anonymity and
+            remove spam or hate speech. If your post is flagged, it may be taken
+            down, but in most cases you should see it immediately.
           </p>
         </div>
         <h2>Can I delete my post?</h2>

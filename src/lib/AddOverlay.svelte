@@ -26,21 +26,28 @@
   function redirectToEmailDrafter() {
     // Create URL parameters based on the submitted data
     const params = new URLSearchParams();
-    
-    if (userEmail && userEmail !== 'Email address (optional)' && userEmail.trim() !== '') {
+
+    if (
+      userEmail &&
+      userEmail !== 'Email address (optional)' &&
+      userEmail.trim() !== ''
+    ) {
       params.append('email', userEmail);
     }
-    
+
     if (momentDescription && momentDescription !== 'This is where...') {
       params.append('story', momentDescription);
     }
-    
+
     if (selectedFeeling) {
       params.append('feeling', selectedFeeling);
     }
-    
+
     // Redirect to the Re:Immigration Email Drafter with parameters
-    window.open(`https://re-immigration.notastranger.org/?${params.toString()}`, '_blank');
+    window.open(
+      `https://re-immigration.notastranger.org/?${params.toString()}`,
+      '_blank'
+    );
     showActionModal = false;
   }
 
@@ -139,7 +146,13 @@
       }
 
       showActionModal = true;
+      // Minimize the add overlay
+      addOverlayVisible.set(false);
       showSubmissionSuccessNotification();
+
+      // Trigger map refresh to show the new story
+      const mapRefreshEvent = new CustomEvent('refreshMapData');
+      window.dispatchEvent(mapRefreshEvent);
     } else {
       const result = await response.json();
       alert(`Error: ${result.error}`);
@@ -153,29 +166,35 @@
 
 <!-- Action Modal -->
 {#if showActionModal}
-<div class="action-modal-overlay">
-  <div class="action-modal">
-    <div class="action-modal-content">
-      <h2>Thank you for sharing your story.</h2>
-      <p>Your experience is now part of the map. But it can also help change immigration policy.</p>
-      
-      <p>With our Re:Immigration Email Drafter, you can:</p>
-      <ul>
-        <li>Send your story directly to your MP.</li>
-        <li>Submit it to the government's immigration consultation.</li>
-      </ul>
-      
-      <div class="action-modal-buttons">
-        <button class="action-btn primary" on:click={redirectToEmailDrafter}>
-          Use my story to take action ➜
-        </button>
-        <button class="action-btn secondary" on:click={() => showActionModal = false}>
-          Maybe later
-        </button>
+  <div class="action-modal-overlay">
+    <div class="action-modal">
+      <div class="action-modal-content">
+        <h2>Thank you for sharing your story.</h2>
+        <p>
+          Your experience is now part of the map. But it can also help change
+          immigration policy.
+        </p>
+
+        <p>With our Re:Immigration Email Drafter, you can:</p>
+        <ul>
+          <li>Send your story directly to your MP.</li>
+          <li>Submit it to the government's immigration consultation.</li>
+        </ul>
+
+        <div class="action-modal-buttons">
+          <button class="action-btn primary" on:click={redirectToEmailDrafter}>
+            Use my story to take action ➜
+          </button>
+          <button
+            class="action-btn secondary"
+            on:click={() => (showActionModal = false)}
+          >
+            Maybe later
+          </button>
+        </div>
       </div>
     </div>
   </div>
-</div>
 {/if}
 
 <aside class="overlay overlay--add">
@@ -294,6 +313,11 @@
                 target="_blank"
                 rel="noopener">Privacy Policy</a
               >.
+              <span class="troubleshooting-text">
+                Having trouble clicking "ADD"? Our spam filter may have
+                mistakenly flagged you as a bot. Try refreshing the page or
+                using a different browser. Sorry about the hassle!
+              </span>
             </div>
             <div class="email-note">
               You don't have to leave your email, but if you do, we'll use this
@@ -512,6 +536,11 @@
     font-size: 0.75em;
   }
 
+  .troubleshooting-text {
+    color: var(--color-dark);
+    line-height: 1.3;
+  }
+
   .email-input {
     margin-top: 0.5em;
     padding: 8px;
@@ -665,11 +694,11 @@
       padding: 1.5rem;
       margin: 0.5rem;
     }
-    
+
     .action-modal-buttons {
       flex-direction: column;
     }
-    
+
     .action-btn {
       width: 100%;
     }

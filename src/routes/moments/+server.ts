@@ -525,7 +525,7 @@ export const GET: RequestHandler = async () => {
   // Fetch approved moments from Supabase
   const { data, error } = await supabase
     .from('moments')
-    .select('short_id, location, description, feeling')
+    .select('short_id, location, description, feeling, featured')
     .eq('status', 'approved');
 
   if (error) {
@@ -568,7 +568,8 @@ export const GET: RequestHandler = async () => {
         },
         properties: {
           description: moment.description,
-          feeling: moment.feeling
+          feeling: moment.feeling,
+          featured: moment.featured
         }
       };
 

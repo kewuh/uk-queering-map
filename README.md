@@ -5,6 +5,7 @@ Placemarked is a community-based platform where individuals share their immigrat
 ## 🗺️ About Placemarked
 
 Placemarked serves multiple purposes:
+
 - **Personal**: A way for individuals to document and share their immigration experiences
 - **Community**: A collective map showing the human impact of immigration policies across the UK
 - **Political**: A bridge between personal immigration stories and policy advocacy
