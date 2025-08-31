@@ -525,7 +525,7 @@ export const GET: RequestHandler = async () => {
   // Fetch approved moments from Supabase
   const { data, error } = await supabase
     .from('moments')
-    .select('short_id, location, description')
+    .select('short_id, location, description, feeling')
     .eq('status', 'approved');
 
   if (error) {
@@ -567,7 +567,8 @@ export const GET: RequestHandler = async () => {
           coordinates: coordinates
         },
         properties: {
-          description: moment.description
+          description: moment.description,
+          feeling: moment.feeling
         }
       };
 
@@ -585,7 +586,7 @@ export const GET: RequestHandler = async () => {
 };
 
 export const POST: RequestHandler = async ({ request }) => {
-  const { lng, lat, description, email, turnstileToken } = await request.json();
+  const { lng, lat, description, email, feeling, turnstileToken } = await request.json();
 
   if (!description?.trim()) {
     return json({ error: 'Description cannot be empty.' }, { status: 400 });
@@ -627,7 +628,8 @@ export const POST: RequestHandler = async ({ request }) => {
       description,
       location: `SRID=4326;POINT(${lng} ${lat})`,
       status: 'approved',
-      email: email || null
+      email: email || null,
+      feeling: feeling || null
     }
   ]);
 

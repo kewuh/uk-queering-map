@@ -16,7 +16,7 @@
     GeolocateControl
   } = maplibregl;
   import 'maplibre-gl/dist/maplibre-gl.css';
-  import markerImage from '$lib/assets/marker.png';
+  import markerImage from '$lib/assets/marker-hovered.png';
   import markerHoveredImage from '$lib/assets/marker-hovered.png';
   import styleJson from '$lib/data/pmtiles/style.json';
   const style = styleJson as StyleSpecification;
@@ -27,6 +27,8 @@
   let map: MapType;
   let mapContainer: HTMLDivElement;
   let isMomentLayerClicked = false;
+  let hasShownFirstPopup = false;
+  let currentFilter: string | null = null;
 
   const initialState = { lng: -0.1276, lat: 51.5074, zoom: 6 };
 
@@ -41,6 +43,32 @@
     type: 'FeatureCollection',
     features: []
   };
+
+  // Function to filter data based on feeling
+  async function filterData(feeling: string | null) {
+    if (!map) return;
+
+    const source = map.getSource(markerId) as GeoJSONSource;
+    if (!source) return;
+
+    if (feeling === null) {
+      // Show all data
+      source.setData('/moments');
+    } else {
+      // Fetch and filter data
+      const response = await fetch('/moments');
+      const data = await response.json();
+
+                const filteredFeatures = data.features.filter((feature: { properties?: { feeling?: string } }) => {
+            return feature.properties?.feeling === feeling;
+          });
+
+      source.setData({
+        type: 'FeatureCollection',
+        features: filteredFeatures
+      });
+    }
+  }
 
   async function getMoment(id?: number | string) {
     try {
@@ -93,8 +121,8 @@
       style: style,
       center: [initialState.lng, initialState.lat],
       zoom: initialState.zoom,
-      minZoom: 3,
-      maxZoom: 18,
+      minZoom: 0,
+      maxZoom: 12,
       attributionControl: false
     });
     map.addControl(
@@ -186,13 +214,22 @@
 
           function showPopup(coords: number[], desc: string) {
             if (coords.length === 2) {
+              // Get the feeling from the feature properties
+              const feeling = feature.properties?.feeling;
+              let emoji = '';
+              if (feeling === 'happy') emoji = '🙂';
+              else if (feeling === 'neutral') emoji = '😐';
+              else if (feeling === 'sad') emoji = '🙁';
+
+              const popupContent = emoji ? `${emoji} | ${desc}` : desc;
+
               new Popup({
                 offset: [0, -markerHeight],
                 anchor: 'bottom',
                 maxWidth: 'none'
               })
                 .setLngLat(coords as LngLatLike)
-                .setHTML(desc)
+                .setHTML(popupContent)
                 .addTo(map);
             } else {
               console.error('Invalid coordinates format');
@@ -248,8 +285,11 @@
         const { lng, lat } = e.lngLat;
         activeMarkerCoords.set({ lng, lat });
 
-        // Show the Add Your Story panel when clicking on empty map area
-        addOverlayVisible.set(true);
+        // Show the Add Your Story panel only on the first click on empty map area
+        if (!hasShownFirstPopup) {
+          addOverlayVisible.set(true);
+          hasShownFirstPopup = true;
+        }
       });
     });
   });
@@ -283,10 +323,112 @@
 
 <div id="map" bind:this={mapContainer}></div>
 
+<!-- Filter buttons -->
+{#if !$addOverlayVisible}
+  <div class="filter-buttons has-active">
+    <button
+      class="filter-btn {currentFilter === null ? 'active' : ''}"
+      on:click={() => {
+        currentFilter = null;
+        filterData(null);
+      }}
+      title="All Stories"
+    >
+      All
+    </button>
+    <button
+      class="filter-btn {currentFilter === 'happy' ? 'active' : ''}"
+      on:click={() => {
+        currentFilter = 'happy';
+        filterData('happy');
+      }}
+      title="Happy Stories"
+    >
+      🙂
+    </button>
+    <button
+      class="filter-btn {currentFilter === 'neutral' ? 'active' : ''}"
+      on:click={() => {
+        currentFilter = 'neutral';
+        filterData('neutral');
+      }}
+      title="Neutral Stories"
+    >
+      😐
+    </button>
+    <button
+      class="filter-btn {currentFilter === 'sad' ? 'active' : ''}"
+      on:click={() => {
+        currentFilter = 'sad';
+        filterData('sad');
+      }}
+      title="Sad Stories"
+    >
+      🙁
+    </button>
+  </div>
+{/if}
+
 <style>
   #map {
     position: absolute;
     width: 100%;
     height: 100%;
   }
+
+  /* Filter buttons */
+  .filter-buttons {
+    position: fixed;
+    top: 80px;
+    right: 9px;
+    z-index: 9998;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    pointer-events: all;
+  }
+
+  .filter-btn {
+    background: var(--color-pink);
+    border: 1px solid black;
+    border-radius: 0.125rem;
+    padding: 0;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: black;
+    font-family: 'Apfel Grotezk', sans-serif;
+    width: 46px;
+    height: 46px;
+    box-shadow:
+      0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    box-sizing: border-box;
+  }
+
+  .filter-btn:hover {
+    background: #e6e6e6;
+    border-color: #e6e6e6;
+  }
+
+  .filter-btn.active {
+    background: #4a90e2;
+    color: white;
+    border: 1px solid black;
+    opacity: 1;
+    box-shadow:
+      0 6px 12px -1px rgba(0, 0, 0, 0.2),
+      0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Fade out inactive buttons when any filter is active */
+  .filter-buttons.has-active .filter-btn:not(.active) {
+    opacity: 0.7;
+  }
+
+  /* Using pink markers */
 </style>

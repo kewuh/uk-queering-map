@@ -14,6 +14,7 @@
 
   let momentDescription = 'This is where...';
   let userEmail = 'Email address (optional)';
+  let selectedFeeling = '';
   let isAddButtonDisabled = true;
   let turnstileToken = '';
 
@@ -72,6 +73,7 @@
       lat: $activeMarkerCoords?.lat,
       description: momentDescription,
       email: userEmail,
+      feeling: selectedFeeling,
       turnstileToken: turnstileToken
     });
 
@@ -155,7 +157,8 @@
             <span>1</span>Share your story in the text box below.
           </div>
           <div class="partial_div-numbered">
-            <span>2</span>Optionally add your email address.
+            <span>2</span>Optionally add your email address and mark how you
+            feel.
           </div>
           <div class="partial_div-numbered">
             <span>3</span>Click the Add button.
@@ -165,6 +168,7 @@
               bind:value={momentDescription}
               id="txt_contents"
               class="subform"
+              placeholder="Share your story here"
               on:click={() => {
                 if (momentDescription === 'This is where...') {
                   momentDescription = '';
@@ -183,6 +187,51 @@
                 }
               }}
             />
+
+            <div class="feeling-section">
+              <label for="feeling-options">How does this memory make you feel? (optional)</label>
+              <div class="feeling-options" id="feeling-options">
+                {#if !selectedFeeling || selectedFeeling === 'happy'}
+                  <button
+                    type="button"
+                    class="feeling-btn {selectedFeeling === 'happy'
+                      ? 'selected'
+                      : ''}"
+                    on:click={() =>
+                      (selectedFeeling =
+                        selectedFeeling === 'happy' ? '' : 'happy')}
+                  >
+                    🙂
+                  </button>
+                {/if}
+                {#if !selectedFeeling || selectedFeeling === 'neutral'}
+                  <button
+                    type="button"
+                    class="feeling-btn {selectedFeeling === 'neutral'
+                      ? 'selected'
+                      : ''}"
+                    on:click={() =>
+                      (selectedFeeling =
+                        selectedFeeling === 'neutral' ? '' : 'neutral')}
+                  >
+                    😐
+                  </button>
+                {/if}
+                {#if !selectedFeeling || selectedFeeling === 'sad'}
+                  <button
+                    type="button"
+                    class="feeling-btn {selectedFeeling === 'sad'
+                      ? 'selected'
+                      : ''}"
+                    on:click={() =>
+                      (selectedFeeling =
+                        selectedFeeling === 'sad' ? '' : 'sad')}
+                  >
+                    🙁
+                  </button>
+                {/if}
+              </div>
+            </div>
 
             <div class="recaptcha-text">
               By submitting I agree to the <a
@@ -264,6 +313,50 @@
     padding-top: 1em;
     padding-left: 2.05rem;
     font-weight: bold;
+  }
+
+  .feeling-section {
+    margin: 1rem 0;
+  }
+
+  .feeling-section label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 15px;
+    color: var(--color-dark);
+  }
+
+  .feeling-options {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .feeling-btn {
+    background: var(--color-pink);
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: black;
+    opacity: 1;
+    box-sizing: border-box;
+  }
+
+  .feeling-btn:hover {
+    background: #e6e6e6;
+    border-color: #e6e6e6;
+  }
+
+  .feeling-btn.selected {
+    background: #4a90e2;
+    color: white;
+    border: 1px solid black;
+    opacity: 1;
+    box-shadow:
+      0 6px 12px -1px rgba(0, 0, 0, 0.2),
+      0 4px 6px -1px rgba(0, 0, 0, 0.1);
   }
 
   .overlay__section-text {

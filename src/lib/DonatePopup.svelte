@@ -39,12 +39,12 @@
     min-height: 3.5rem;
     margin-bottom: 0.5rem;
     padding: 0;
-    background: black;
+    background: var(--color-pink);
     color: #fff;
     box-shadow:
       0 4px 6px -1px rgba(0, 0, 0, 0.1),
       0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    border: 1px solid var(--color-pink);
+    border: 1px solid black;
     border-radius: 0.125rem;
     display: flex;
     align-items: center;
@@ -59,7 +59,7 @@
     flex: 1;
   }
   .toast-message a {
-    color: var(--color-pink);
+    color: black;
     text-decoration: unset;
   }
   .toast-message a span {
@@ -71,7 +71,7 @@
     right: 4px;
     background: none;
     border: none;
-    color: var(--color-pink);
+    color: black;
     cursor: pointer;
     font: 1rem sans-serif;
   }
