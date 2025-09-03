@@ -215,7 +215,6 @@
   <div class="overlay__outer">
     <div class="overlay__content">
       <section>
-        <div class="overlay__section-title">Add Your Story</div>
         <div class="overlay__section-text">
           <div class="partial_div-numbered">
             <span>1</span>Share your story in the text box below.
@@ -374,17 +373,7 @@
     padding: 0.8em;
   }
 
-  .overlay__section-title {
-    text-decoration: none;
-    font-size: 15px;
-    color: var(--color-dark);
-    display: block;
-    font-weight: 500;
-    padding-bottom: 4px;
-    padding-top: 1em;
-    padding-left: 2.05rem;
-    font-weight: bold;
-  }
+
 
   .feeling-section {
     margin: 1rem 0;
@@ -458,10 +447,6 @@
   }
 
   @media (max-width: 800px) {
-    .overlay__section-title {
-      padding-left: 1.05rem;
-    }
-
     .partial_div-numbered {
       padding-left: 0.5em;
     }
